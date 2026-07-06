@@ -1,0 +1,1022 @@
+/* ============================================================
+   Chenmiao He — Academic Personal Site
+   Shared stylesheet (academic / DSHS Köln inspired)
+   ============================================================ */
+
+:root {
+  --ink:        #111418;
+  --ink-soft:   #3a3f47;
+  --muted:      #6b7280;
+  --rule:       #c9ccd1;
+  --rule-soft:  #e8eaee;
+  --accent:     #5E1224;   /* deep wine — sabre red */
+  --accent-2:   #0B2545;   /* navy, used very sparingly */
+  --bg:         #FAFAF7;
+  --card:       #ffffff;
+
+  /* System-font stacks (no Google Fonts — fast in CN, no network blocking) */
+  --serif:      Georgia, "Times New Roman", "Songti SC", "STSong", "SimSun", "宋体", "Source Han Serif SC", "Noto Serif CJK SC", serif;
+  --sans:       -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Arial, "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+  --mono:       ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------- top nav -------- */
+.nav {
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+}
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* -------- language switch -------- */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 18px;
+  padding-left: 18px;
+  border-left: 1px solid var(--rule);
+  font-size: 13px;
+}
+.lang-switch button {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 3px 9px;
+  font: inherit;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+.lang-switch button:hover { color: var(--accent); }
+.lang-switch button.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* -------- bilingual visibility -------- */
+.lang-en, .lang-cn { display: none; }
+html[data-lang="en"] .lang-en { display: initial; }
+html[data-lang="cn"] .lang-cn { display: initial; }
+/* block-level overrides where needed */
+html[data-lang="en"] .lang-en.block { display: block; }
+html[data-lang="cn"] .lang-cn.block { display: block; }
+
+/* -------- page container -------- */
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+}
+
+/* ============================================================
+   HERO  (home page: photo + name + intro)
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 240px;   /* photo on the right */
+  gap: 56px;
+  align-items: center;                /* vertical centering — balances photo & text */
+  padding: 24px 0 48px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.hero-body  { grid-column: 1; grid-row: 1; }
+.hero-photo { grid-column: 2; grid-row: 1; }
+
+.hero-photo {
+  width: 240px;
+  height: 300px;
+  background: #e3e6ea;
+  background-image: url("photo.jpg");
+  background-size: cover;
+  background-position: center top;
+  border: 1px solid var(--rule);
+}
+
+.hero-name {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0 0 22px;
+  line-height: 1.05;
+}
+.hero-name-cn {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-left: 10px;
+  letter-spacing: 0.15em;
+}
+.hero-role {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+.hero-intro {
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  margin: 0 0 22px;
+  line-height: 1.85;
+}
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--rule-soft);
+}
+.hero-meta .label {
+  font-weight: 600;
+  color: var(--ink);
+  margin-right: 6px;
+}
+
+/* ============================================================
+   SECTION  (DSHS / academic style)
+   ============================================================ */
+.section {
+  margin-top: 44px;
+}
+.section-title {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 6px;
+  margin: 0 0 20px;
+}
+
+/* -------- entry: a single school / job / etc. -------- */
+.entry {
+  margin-bottom: 26px;
+}
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+.entry-title {
+  font-weight: 700;
+  font-size: 18px;          /* school name — biggest */
+  color: var(--ink);
+  position: relative;
+  padding-left: 18px;
+}
+.entry-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.entry-title .loc {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+.entry-date {
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.entry-degree {
+  font-style: italic;
+  font-size: 15px;            /* degree — medium */
+  color: var(--ink-soft);
+  margin-top: 4px;
+  padding-left: 18px;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  column-gap: 16px;
+  row-gap: 8px;
+  margin-top: 10px;
+  padding-left: 18px;
+}
+.kv .k {
+  font-weight: 700;
+  font-size: 15px;           /* label — larger */
+  color: var(--ink);
+}
+.kv .v {
+  color: var(--ink-soft);
+  font-style: italic;
+  font-size: 13.5px;         /* course list — smaller */
+  line-height: 1.55;
+}
+.kv .v .grade {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+/* ============================================================
+   PAGE HEADER (non-home pages)
+   ============================================================ */
+.page-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+.page-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  margin: 0 0 32px;
+  max-width: 720px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   ROLE SPECTRUM (athlete → referee → coach → researcher)
+   ============================================================ */
+.spectrum {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 8px 0 36px;
+  border: 1px solid var(--rule-soft);
+  background: var(--card);
+}
+.spectrum-cell {
+  padding: 18px 16px;
+  border-right: 1px solid var(--rule-soft);
+  position: relative;
+}
+.spectrum-cell:last-child { border-right: none; }
+.spectrum-cell::after {
+  content: "→";
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg);
+  color: var(--accent);
+  font-size: 14px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.spectrum-cell:last-child::after { display: none; }
+.spectrum-role {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.spectrum-years {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.spectrum-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   CERTIFICATIONS WALL
+   ============================================================ */
+.cert-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.cert-col-title {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--rule);
+}
+.cert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cert-item {
+  padding: 10px 0 10px 18px;
+  border-bottom: 1px solid var(--rule-soft);
+  position: relative;
+}
+.cert-item:last-child { border-bottom: none; }
+.cert-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.cert-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+  line-height: 1.4;
+}
+.cert-issuer {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 2px;
+  display: block;
+}
+
+/* ============================================================
+   TAG CLOUD (domain expertise)
+   ============================================================ */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 8px;
+}
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--card);
+}
+.tag.primary {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ============================================================
+   CERT GRID  (horizontal certificate layout)
+   ============================================================ */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 4px;
+  padding: 0;
+  list-style: none;
+}
+.entry-single {
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+/* ============================================================
+   RESEARCH CARD  (achievements page)
+   ============================================================ */
+.research {
+  border: 1px solid var(--rule-soft);
+  background: var(--card);
+  border-left: 3px solid var(--accent);
+  padding: 22px 26px;
+  margin-bottom: 22px;
+}
+.research-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.research-title {
+  font-family: var(--serif);
+  font-size: 17.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.research-meta {
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.research-fields {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  column-gap: 18px;
+  row-gap: 10px;
+}
+.research-fields .k {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.research-fields .v {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.research-fields .v.placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+.entry-single .entry-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cert-grid li {
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+}
+@media (max-width: 800px) {
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .cert-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TECH STACK BARS  (data science page)
+   ============================================================ */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 36px;
+  margin-top: 4px;
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 56px;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+.tech-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.tech-bar {
+  height: 6px;
+  background: var(--rule-soft);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.tech-bar-fill {
+  height: 100%;
+  background: var(--accent);
+}
+.tech-note {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: right;
+}
+
+/* ============================================================
+   PROJECT CARD  (data science page)
+   ============================================================ */
+.project {
+  border: 1px solid var(--rule-soft);
+  background: var(--card);
+  padding: 22px 24px;
+  margin-bottom: 22px;
+  border-left: 3px solid var(--accent);
+}
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.project-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.project-tag {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  white-space: nowrap;
+}
+.project-sub {
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+.project-grid .k {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.project-grid .v {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.project-grid .v.placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ============================================================
+   PIPELINE  (4-stage workflow visualization)
+   ============================================================ */
+.pipeline {
+  margin-top: 28px;
+  position: relative;
+}
+.pipeline-stage {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 22px;
+  margin-bottom: 18px;
+  position: relative;
+}
+.pipeline-stage:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 35px;
+  top: 72px;
+  bottom: -18px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--rule-soft) 100%);
+}
+.pipeline-num {
+  width: 72px;
+  height: 72px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 1;
+  position: relative;
+}
+.pipeline-num .lbl {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  margin-top: 4px;
+  opacity: 0.75;
+}
+.pipeline-card {
+  background: var(--card);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--accent);
+  padding: 20px 26px;
+}
+.pipeline-stage-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.pipeline-stage-sub {
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.pipeline-stage-body {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.pipeline-stage-body ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.pipeline-stage-body li {
+  margin-bottom: 4px;
+}
+.pipeline-stage-body li::marker { color: var(--accent); }
+.pipeline-stage-body .placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+.pipeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.pipeline-tags .tag {
+  font-size: 11.5px;
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   CYCLE  (circular 4-stage framework diagram)
+   ============================================================ */
+.cycle-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 8px;
+}
+.cycle {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+}
+.cycle-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.cycle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: var(--serif);
+  z-index: 1;
+}
+.cycle-center .label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.cycle-center .title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.3;
+  max-width: 160px;
+}
+.cycle-node {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(11, 37, 69, 0.06);
+  z-index: 2;
+}
+.cycle-node.top    { top: 0;          left: 50%;       transform: translateX(-50%); }
+.cycle-node.right  { right: 0;        top: 50%;        transform: translateY(-50%); }
+.cycle-node.bottom { bottom: 0;       left: 50%;       transform: translateX(-50%); }
+.cycle-node.left   { left: 0;         top: 50%;        transform: translateY(-50%); }
+
+.cycle-num {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.cycle-title-cn,
+.cycle-title-en {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.cycle-title-en { font-family: var(--serif); }
+.cycle-sub {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 5px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+@media (max-width: 560px) {
+  .cycle { max-width: 100%; }
+  .cycle-node { width: 130px; height: 130px; padding: 10px; }
+  .cycle-num { font-size: 22px; }
+  .cycle-title-cn, .cycle-title-en { font-size: 13px; }
+  .cycle-center .title { font-size: 15px; max-width: 140px; }
+}
+
+/* ============================================================
+   MEDAL / TROPHY GRID  (achievements page)
+   ============================================================ */
+.medals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 4px;
+}
+.medal {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid var(--rule-soft);
+  background: var(--card);
+}
+.medal-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.medal-body {
+  flex: 1;
+}
+.medal-place {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.medal-event {
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-top: 2px;
+  line-height: 1.45;
+}
+.medal-year {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* ============================================================
+   AWARDS / SCHOLARSHIPS
+   ============================================================ */
+.awards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.award {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 16px;
+  background: linear-gradient(to right, #fff8e6 0%, var(--card) 100%);
+  border: 1px solid #ead9a8;
+  border-left: 3px solid #b8902a;
+}
+.award-icon { font-size: 18px; }
+.award-name { font-weight: 700; font-size: 14.5px; color: var(--ink); }
+.award-issuer { font-size: 12.5px; color: var(--muted); font-style: italic; display: block; margin-top: 2px; }
+.award-year { font-size: 13px; color: var(--ink-soft); font-style: italic; white-space: nowrap; }
+
+/* ============================================================
+   CV PAGE  (compact)
+   ============================================================ */
+.cv-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+.cv-btn.secondary {
+  background: transparent;
+  color: var(--accent);
+}
+.cv-btn:hover { opacity: 0.85; }
+
+.cv .section { margin-top: 28px; }
+.cv .entry { margin-bottom: 16px; }
+.cv .entry-body { margin-top: 4px; }
+.cv .entry-body ul { padding-left: 16px; }
+.cv .entry-body li { margin-bottom: 2px; font-size: 14px; }
+.cv-line {
+  font-size: 14px;
+  color: var(--ink-soft);
+  padding-left: 18px;
+  margin-top: 4px;
+}
+.cv-inline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.cv-inline strong { color: var(--ink); }
+
+/* ============================================================
+   MOBILE  (stack multi-column layouts on narrow screens)
+   ============================================================ */
+@media (max-width: 720px) {
+  /* nav: allow links to wrap instead of overflowing */
+  .nav-inner {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+  .lang-switch {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .page { padding: 32px 20px 64px; }
+
+  /* hero: photo on top, text below */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 12px 0 36px;
+  }
+  .hero-photo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    width: 180px;
+    height: 225px;
+  }
+  .hero-body {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .hero-name { font-size: 34px; }
+  .hero-name-cn { display: block; margin: 8px 0 0; }
+  .page-title { font-size: 26px; }
+
+  /* role spectrum: 4 columns → vertical list */
+  .spectrum { grid-template-columns: 1fr; }
+  .spectrum-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .spectrum-cell:last-child { border-bottom: none; }
+  .spectrum-cell::after {
+    content: "↓";
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -9px;
+    transform: translateX(-50%);
+  }
+
+  /* two-column blocks → single column */
+  .cert-columns { grid-template-columns: 1fr; gap: 20px; }
+  .tech-grid { grid-template-columns: 1fr; gap: 4px; }
+  .medals { grid-template-columns: 1fr; }
+
+  .tech-row { grid-template-columns: 110px 1fr 52px; }
+
+  /* headings with right-aligned dates: let them wrap */
+  .entry-head, .research-head, .project-head {
+    flex-wrap: wrap;
+    gap: 2px 16px;
+  }
+
+  /* label/value grids → stacked */
+  .kv { grid-template-columns: 1fr; row-gap: 2px; }
+  .kv .k { margin-top: 10px; }
+  .kv .k:first-child { margin-top: 0; }
+  .research-fields, .project-grid { grid-template-columns: 1fr; row-gap: 2px; }
+  .research-fields .v, .project-grid .v { margin-bottom: 8px; }
+
+  .research, .project { padding: 18px 16px; }
+
+  /* pipeline: smaller stage circles */
+  .pipeline-stage { grid-template-columns: 52px 1fr; gap: 14px; }
+  .pipeline-num { width: 52px; height: 52px; font-size: 20px; }
+  .pipeline-num .lbl { display: none; }
+  .pipeline-stage:not(:last-child)::after { left: 25px; top: 52px; }
+  .pipeline-card { padding: 16px 18px; }
+
+  .cv-actions { flex-wrap: wrap; }
+}
