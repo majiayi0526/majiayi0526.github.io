@@ -1,0 +1,368 @@
+/* ============================================================
+   Layout — nav, page shell, hero, sections, footer
+   ============================================================ */
+
+/* ---- page shell ------------------------------------------- */
+.page {
+  max-width: var(--w-page);
+  margin: 0 auto;
+  padding: 0 var(--s-gutter);
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 12, 14, 0.78);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.nav__inner {
+  max-width: var(--w-page);
+  margin: 0 auto;
+  padding: var(--s-4) var(--s-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-5);
+}
+.nav__brand {
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.nav__brand .mark {
+  display: inline-block;
+  width: 6px; height: 6px;
+  margin-right: var(--s-3);
+  background: var(--accent);
+  transform: rotate(45deg);
+  vertical-align: middle;
+}
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--s-4), 1.6vw, var(--s-6));
+}
+.nav__link {
+  position: relative;
+  font-size: var(--t-small);
+  color: var(--ink-soft);
+  padding: var(--s-2) 0;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.nav__link:hover { color: var(--ink); }
+.nav__link:hover::after { transform: scaleX(1); }
+.nav__link.is-active { color: var(--ink); }
+.nav__link.is-active::after { transform: scaleX(1); }
+
+/* ---- language switch -------------------------------------- */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.1em;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out),
+              color      var(--dur-fast) var(--ease-out);
+}
+.lang-switch button:hover { color: var(--ink); }
+.lang-switch button.active { background: var(--accent); color: #fff; }
+
+/* ---- mobile nav ------------------------------------------- */
+.nav__toggle {
+  display: none;
+  appearance: none;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: var(--t-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .nav__toggle { display: block; }
+  .nav__menu {
+    position: absolute;
+    left: 0; right: 0; top: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--s-4) var(--s-gutter) var(--s-6);
+    background: var(--bg-lift);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav__menu[hidden] { display: none; }
+  .nav__link {
+    width: 100%;
+    padding: var(--s-4) 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 1rem;
+  }
+  .lang-switch { margin-top: var(--s-5); }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero { padding: clamp(3.5rem, 2rem + 6vw, 7rem) 0 0; }
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.38fr 0.62fr;
+  gap: clamp(var(--s-6), 4vw, var(--s-9));
+  align-items: end;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-bottom: var(--s-5);
+}
+.hero__eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--rule-strong), transparent);
+}
+
+.hero__name {
+  font-size: var(--t-display);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: var(--track-display);
+  margin-bottom: var(--s-5);
+}
+:root[data-lang="cn"] .hero__name {
+  letter-spacing: 0.08em;
+  line-height: 1.02;
+  font-weight: 600;
+}
+
+.hero__role {
+  font-size: var(--t-h3);
+  font-weight: 450;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 34ch;
+  margin-bottom: var(--s-5);
+}
+.hero__role .sep { color: var(--accent); padding: 0 2px; }
+
+.hero__lede {
+  font-size: var(--t-lede);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin-bottom: var(--s-6);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-bottom: var(--s-5);
+}
+
+/* ---- portrait ---------------------------------------------
+   The source portrait is a formal white-ground ID photo. Rather
+   than fight it, it is mounted as a light plate on the dark
+   field — a framed print — and pulled down so it overlaps the
+   rule beneath the hero. That overlap is the depth cue.
+   ----------------------------------------------------------- */
+.portrait {
+  margin: 0;
+  position: relative;
+  transform: translateY(clamp(16px, 3vw, 40px));
+}
+.portrait__frame {
+  position: relative;
+  background: var(--plate);
+  border-radius: var(--r-lg);
+  padding: 10px 10px 0;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.10) inset,
+    0 30px 70px -28px rgba(0, 0, 0, 0.9),
+    0 0 0 1px var(--rule);
+  overflow: hidden;
+}
+.portrait__frame img {
+  width: 100%;
+  border-radius: var(--r-md) var(--r-md) 0 0;
+  filter: saturate(0.9) contrast(1.03);
+}
+.portrait__caption {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  margin-top: var(--s-3);
+  color: var(--muted);
+}
+
+/* ---- hero stat rail ---------------------------------------
+   Hairline-separated numerals, deliberately NOT cards.
+   ----------------------------------------------------------- */
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-5);
+  margin-top: clamp(var(--s-8), 7vw, var(--s-9));
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+.stat__value {
+  font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--s-3);
+}
+.stat__value .unit {
+  font-size: 0.44em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--accent-text);
+  margin-left: 3px;
+}
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; align-items: start; }
+  .portrait {
+    transform: none;
+    max-width: 260px;
+    order: -1;
+    margin-bottom: var(--s-6);
+  }
+  .hero__stats { grid-template-columns: repeat(2, 1fr); gap: var(--s-6) var(--s-5); }
+}
+@media (max-width: 420px) {
+  .hero__stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section { padding: var(--s-section) 0 0; }
+.section--last { padding-bottom: var(--s-section); }
+
+.section__head {
+  display: grid;
+  grid-template-columns: 4.25rem 1fr;
+  gap: var(--s-5);
+  align-items: baseline;
+  padding-bottom: var(--s-6);
+  margin-bottom: var(--s-7);
+  border-bottom: 1px solid var(--rule);
+}
+.section__num { color: var(--accent-text); padding-top: 0.55em; }
+.section__title {
+  font-size: var(--t-h1);
+  font-weight: 500;
+  letter-spacing: var(--track-display);
+}
+:root[data-lang="cn"] .section__title { letter-spacing: 0.02em; }
+.section__sub {
+  grid-column: 2;
+  margin-top: var(--s-4);
+  max-width: var(--w-text);
+  color: var(--ink-soft);
+  font-size: var(--t-lede);
+  line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .section__head { grid-template-columns: 1fr; gap: var(--s-3); }
+  .section__sub { grid-column: 1; }
+}
+
+/* ---- institution strip ------------------------------------ */
+.strip {
+  margin-top: clamp(var(--s-8), 7vw, var(--s-9));
+  padding: var(--s-6) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4) clamp(var(--s-5), 3vw, var(--s-8));
+}
+.strip__item { color: var(--ink-soft); }
+.strip__item .label { color: inherit; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  margin-top: var(--s-section);
+  border-top: 1px solid var(--rule);
+  background: var(--bg-lift);
+}
+.footer__inner {
+  max-width: var(--w-page);
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-gutter) var(--s-7);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: var(--s-7) var(--s-6);
+}
+.footer__name {
+  font-size: var(--t-h3);
+  font-weight: 550;
+  margin-bottom: var(--s-3);
+}
+.footer__blurb { color: var(--muted); font-size: var(--t-small); max-width: 34ch; }
+.footer__col ul { list-style: none; margin: var(--s-4) 0 0; padding: 0; }
+.footer__col li { margin-bottom: var(--s-3); }
+.footer__col a {
+  font-size: var(--t-small);
+  color: var(--ink-soft);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footer__col a:hover { color: var(--accent-text); }
+.footer__base {
+  max-width: var(--w-page);
+  margin: 0 auto;
+  padding: var(--s-5) var(--s-gutter) var(--s-7);
+  border-top: 1px solid var(--rule-soft);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+@media (max-width: 720px) {
+  .footer__inner { grid-template-columns: 1fr; gap: var(--s-6); }
+}

@@ -1,0 +1,89 @@
+/* ============================================================
+   马佳艺 · Jiayi Ma — Design tokens
+   Direction: dark editorial. Steel + sabre wine.
+   One dominant field (near-black), one accent (wine red).
+   ============================================================ */
+
+:root {
+  /* ---- surface ladder ---------------------------------- */
+  --bg:          #0B0C0E;
+  --bg-lift:     #101215;
+  --surface:     #15181C;
+  --surface-2:   #1C2026;
+  --plate:       #F2F1ED;   /* warm light plate — portrait framing */
+
+  /* ---- ink ---------------------------------------------- */
+  --ink:         #ECEDEE;   /* 16.4:1 on --bg */
+  --ink-soft:    #A8ACB2;   /*  8.6:1 */
+  --muted:       #7C838C;   /*  5.2:1 — smallest text still AA */
+  --ink-plate:   #14161A;   /* ink on the light plate */
+
+  /* ---- accent: sabre wine ------------------------------- */
+  --accent:      #C2354A;   /* 3.6:1 — large text, rules, marks only */
+  --accent-text: #E8677C;   /* 6.2:1 — safe for small accent text */
+  --accent-deep: #5E1224;   /* fills, glow */
+
+  /* ---- rules -------------------------------------------- */
+  --rule:        #24282E;
+  --rule-soft:   #191C20;
+  --rule-strong: #333941;
+
+  /* ---- type faces --------------------------------------
+     Deliberate three-face pairing, all system-resident:
+     no webfont request, no render block, no CN CDN risk.
+       sans  — structure and body
+       serif — statement lines only (the pull-quote voice)
+       mono  — every piece of metadata: dates, labels, counts
+     ------------------------------------------------------ */
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+          "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+          "Roboto Mono", "Courier New", monospace;
+
+  /* ---- type scale (fluid) ------------------------------- */
+  --t-display: clamp(3.1rem, 1.1rem + 8.2vw, 7.5rem);
+  --t-h1:      clamp(2.1rem, 1.2rem + 3.6vw, 3.6rem);
+  --t-h2:      clamp(1.6rem, 1.1rem + 2.1vw, 2.5rem);
+  --t-h3:      clamp(1.08rem, 0.98rem + 0.42vw, 1.3rem);
+  --t-lede:    clamp(1.04rem, 0.96rem + 0.42vw, 1.24rem);
+  --t-body:    clamp(0.95rem, 0.92rem + 0.14vw, 1.02rem);
+  --t-small:   0.875rem;
+  --t-label:   0.6875rem;   /* 11px mono labels */
+
+  /* ---- tracking ----------------------------------------- */
+  --track-display: -0.045em;
+  --track-tight:   -0.02em;
+  --track-label:    0.18em;
+
+  /* ---- spacing rhythm (4px base, non-uniform on purpose) - */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --s-gutter:  clamp(1.25rem, 0.5rem + 3.2vw, 3.5rem);
+
+  /* ---- measure ------------------------------------------ */
+  --w-page:    1180px;
+  --w-text:    62ch;
+
+  /* ---- motion ------------------------------------------- */
+  --dur-fast:   160ms;
+  --dur-base:   320ms;
+  --dur-slow:   720ms;
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- shape -------------------------------------------- */
+  --r-sm: 3px;
+  --r-md: 6px;
+  --r-lg: 14px;
+}

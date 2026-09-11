@@ -1,205 +1,240 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jiayi Ma · Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="lang.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="description" content="Jiayi Ma — sabre fencer, Grade-A referee of the Chinese Fencing Association, and M.S. researcher in physical education and training, applying computer vision and large language models to youth sabre training and injury-risk assessment.">
+<meta name="author" content="Jiayi Ma">
+<title>Home · Jiayi Ma 马佳艺</title>
+<link rel="canonical" href="https://majiayi0526.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Home · Jiayi Ma 马佳艺">
+<meta property="og:description" content="Jiayi Ma — sabre fencer, Grade-A referee of the Chinese Fencing Association, and M.S. researcher in physical education and training, applying computer vision and large language models to youth sabre training and injury-risk assessment.">
+<meta property="og:image" content="https://majiayi0526.github.io/photo.jpg">
+<meta property="og:url" content="https://majiayi0526.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/layout.css">
+<link rel="stylesheet" href="styles/components.css">
+<script src="js/lang.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/reveal.js" defer></script>
 </head>
 <body>
 
-  <!-- top nav -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span class="lang-en">Jiayi Ma</span>
-        <span class="lang-cn">马佳艺</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" class="active">
-          <span class="lang-en">Home</span><span class="lang-cn">首页</span>
-        </a>
-        <a href="fencing.html">
-          <span class="lang-en">Sports Professional</span><span class="lang-cn">体育专业经历</span>
-        </a>
-        <a href="research.html">
-          <span class="lang-en">Research</span><span class="lang-cn">科研成果</span>
-        </a>
-        <a href="awards.html">
-          <span class="lang-en">Honors &amp; Certificates</span><span class="lang-cn">荣誉证书</span>
-        </a>
-        <a href="cv.html">
-          <span class="lang-en">CV</span><span class="lang-cn">简历</span>
-        </a>
-        <span class="lang-switch">
-          <button data-lang="en">EN</button>
-          <button data-lang="cn">中文</button>
+<a class="skip-link" href="#main"><span class="lang-en">Skip to content</span><span class="lang-cn">跳到正文</span></a>
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="lang-en">JIAYI MA</span><span class="lang-cn">马佳艺</span></a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span class="lang-en">Menu</span><span class="lang-cn">菜单</span></button>
+    <div class="nav__menu" id="nav-menu">
+        <a class="nav__link is-active" href="index.html"><span class="lang-en">Home</span><span class="lang-cn">首页</span></a>
+        <a class="nav__link" href="research.html"><span class="lang-en">Research</span><span class="lang-cn">科研</span></a>
+        <a class="nav__link" href="fencing.html"><span class="lang-en">Sport</span><span class="lang-cn">体育专业</span></a>
+        <a class="nav__link" href="awards.html"><span class="lang-en">Honors</span><span class="lang-cn">荣誉证书</span></a>
+        <a class="nav__link" href="cv.html"><span class="lang-en">CV</span><span class="lang-cn">简历</span></a>
+        <span class="lang-switch" role="group" aria-label="Language / 语言">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="cn" aria-pressed="false">中文</button>
         </span>
+    </div>
+  </div>
+</nav>
+
+<main class="page" id="main">
+
+
+  <header class="hero">
+    <div class="hero__grid">
+      <div class="hero__body">
+        <p class="hero__eyebrow reveal"><span class="label label--accent"><span class="lang-en">Sabre · Sport Science · AI</span><span class="lang-cn">佩剑 · 运动科学 · 人工智能</span></span></p>
+        <h1 class="hero__name reveal"><span class="lang-en">JIAYI<br>MA</span><span class="lang-cn">马 佳 艺</span></h1>
+        <p class="hero__role reveal"><span class="lang-en">National Class-I sabre athlete <span class="sep">/</span> Grade-A referee <span class="sep">/</span> M.S. in Physical Education &amp; Training</span><span class="lang-cn">佩剑一级运动员 <span class="sep">/</span> 国家A级击剑裁判 <span class="sep">/</span> 体育教育训练学硕士</span></p>
+        <p class="hero__lede reveal"><span class="lang-en">I coach sabre, referee it at national level, and research it. My work puts computer vision and expert-aligned language models onto the piste — so that what a senior coach sees in a lunge can be measured, explained, and taught.</span><span class="lang-cn">我执教佩剑，也在全国级赛事执裁，并以它为研究对象。我的工作是把计算机视觉与专家对齐的大语言模型带上剑道——让资深教练在一个弓步里看到的东西，能够被测量、被解释、被传授。</span></p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--primary" href="research.html"><span class="lang-en">View research</span><span class="lang-cn">查看科研</span> <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn" href="JiayiMa_CV.pdf"><span class="lang-en">Download CV</span><span class="lang-cn">下载简历</span> <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <figure class="portrait reveal">
+        <div class="portrait__frame">
+          <img src="photo.jpg" width="930" height="1275" alt="Portrait of Jiayi Ma" fetchpriority="high" decoding="async">
+        </div>
+        <figcaption class="portrait__caption">
+          <span class="label"><span class="lang-en">Beijing / Springfield</span><span class="lang-cn">北京 / 春田</span></span>
+          <span class="label">2026</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="hero__stats">
+      <div class="stat reveal">
+        <p class="stat__value">10+</p>
+        <p class="label"><span class="lang-en">Conference presentations</span><span class="lang-cn">会议报告</span></p>
+        <p class="stat__note"><span class="lang-en">International and national, 2024–2026</span><span class="lang-cn">国际及全国会议，2024–2026</span></p>
+      </div>
+      <div class="stat reveal">
+        <p class="stat__value">22</p>
+        <p class="label"><span class="lang-en">Events officiated</span><span class="lang-cn">执裁赛事</span></p>
+        <p class="stat__note"><span class="lang-en">Grade-A referee, Chinese Fencing Association</span><span class="lang-cn">中国击剑协会 A级裁判</span></p>
+      </div>
+      <div class="stat reveal">
+        <p class="stat__value">9</p>
+        <p class="label"><span class="lang-en">Golds as head coach</span><span class="lang-cn">执教金牌</span></p>
+        <p class="stat__note"><span class="lang-en">4 national · 5 Beijing municipal</span><span class="lang-cn">全国级 4 枚 · 北京市级 5 枚</span></p>
+      </div>
+      <div class="stat reveal">
+        <p class="stat__value">5<span class="unit"><span class="lang-en">yrs</span><span class="lang-cn">年</span></span></p>
+        <p class="label"><span class="lang-en">Seasons coaching sabre</span><span class="lang-cn">执教学年</span></p>
+        <p class="stat__note"><span class="lang-en">High School Affiliated to Peking University</span><span class="lang-cn">北京大学附属中学</span></p>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <main class="page">
+  <section class="strip reveal" aria-label="Affiliations">
+    <span class="label label--accent"><span class="lang-en">Affiliations</span><span class="lang-cn">所属机构</span></span>
+    <span class="strip__item"><span class="label"><span class="lang-en">Beijing Sport University</span><span class="lang-cn">北京体育大学</span></span></span>
+    <span class="strip__item"><span class="label"><span class="lang-en">Springfield College</span><span class="lang-cn">美国春田学院</span></span></span>
+    <span class="strip__item"><span class="label"><span class="lang-en">CUHK</span><span class="lang-cn">香港中文大学</span></span></span>
+    <span class="strip__item"><span class="label"><span class="lang-en">Chinese Fencing Association</span><span class="lang-cn">中国击剑协会</span></span></span>
+    <span class="strip__item"><span class="label"><span class="lang-en">HS Affiliated to Peking University</span><span class="lang-cn">北京大学附属中学</span></span></span>
+  </section>
 
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="hero-photo" aria-label="Portrait of Jiayi Ma"></div>
 
-      <div class="hero-body">
-        <h1 class="hero-name">
-          <span class="lang-en">JIAYI MA</span>
-          <span class="lang-cn">马 佳 艺</span>
-        </h1>
+  <section class="section" aria-labelledby="sec-01">
+    <div class="section__head reveal">
+      <p class="label section__num">01</p>
+      <h2 class="section__title" id="sec-01"><span class="lang-en">Research focus</span><span class="lang-cn">研究方向</span></h2>
+    <p class="section__sub"><span class="lang-en">Three threads of one question: what does an expert coach see, and can a machine be taught to see it the same way?</span><span class="lang-cn">三条线索指向同一个问题——专家教练究竟看见了什么，机器能否被教会用同样的方式去看？</span></p>
+    </div>
 
-        <p class="hero-role">
-          <span class="lang-en">Sabre Fencer (National Class-I Athlete) · Grade-A Referee · M.S. Candidate in Physical Education &amp; Training</span>
-          <span class="lang-cn">佩剑一级运动员 · 国家A级击剑裁判 · 体育教育训练学硕士研究生</span>
-        </p>
+    <div class="grid-3">
+      <article class="card reveal">
+        <p class="label card__num">01</p>
+        <h3 class="card__title"><span class="lang-en">Computer vision on the piste</span><span class="lang-cn">剑道上的计算机视觉</span></h3>
+        <p class="card__body"><span class="lang-en">Markerless motion capture and YOLOv8-Pose skeleton extraction turned into a 19-indicator biomechanics system for sabre technique.</span><span class="lang-cn">以无标记动作捕捉与 YOLOv8-Pose 骨架提取为基础，构建佩剑技术的 19 项生物力学指标体系。</span></p>
+        <ul class="tags"><li class="tag">YOLOv8-Pose</li><li class="tag">OpenCV</li><li class="tag">Markerless Mocap</li></ul>
+      </article>
+      <article class="card reveal">
+        <p class="label card__num">02</p>
+        <h3 class="card__title"><span class="lang-en">Aligning models with expert coaches</span><span class="lang-cn">让模型对齐专家教练</span></h3>
+        <p class="card__body"><span class="lang-en">Two-stage SFT + DPO alignment (Qwen2.5-7B + LoRA) so a model reasons along the diagnostic pathway a senior coach actually follows.</span><span class="lang-cn">两阶段 SFT + DPO 对齐（Qwen2.5-7B + LoRA），让模型沿着资深教练真实的诊断路径进行推理。</span></p>
+        <ul class="tags"><li class="tag">Qwen2.5-7B</li><li class="tag">LoRA</li><li class="tag">SFT + DPO</li></ul>
+      </article>
+      <article class="card reveal">
+        <p class="label card__num">03</p>
+        <h3 class="card__title"><span class="lang-en">Injury risk, flagged early</span><span class="lang-cn">损伤风险的前置识别</span></h3>
+        <p class="card__body"><span class="lang-en">Interpretable lower-limb injury-risk reports for sabre fencers aged 12–18, validated against national-level coach evaluation.</span><span class="lang-cn">为 12–18 岁佩剑运动员生成可解释的下肢损伤风险报告，并以国家级教练员评估作为验证基准。</span></p>
+        <ul class="tags"><li class="tag">Weighted Kappa / ICC</li><li class="tag">Expert Panel</li><li class="tag">Streamlit</li></ul>
+      </article>
+    </div>
 
-        <p class="hero-intro">
-          <span class="lang-en">
-            I am a master's student in Physical Education and Training at Beijing Sport
-            University, and was selected by the China Scholarship Council (CSC) for a
-            joint master's program at Springfield College, USA. My research focuses on
-            the intersection of artificial intelligence and youth sports training,
-            covering computer-vision-based intelligent movement recognition, sports
-            injury-risk early warning, and the coordinated physical and mental
-            development of adolescents. In my specialist field, I serve as a Grade-A
-            referee of the Chinese Fencing Association and head coach of the sabre
-            squad at the High School Affiliated to Peking University, where my
-            student-athletes have won four golds and two silvers at national-level
-            competitions.
-          </span>
-          <span class="lang-cn">
-            我是北京体育大学体育教育训练学专业硕士研究生，曾由国家留学基金委（CSC）
-            公派至美国春田学院联合培养。研究方向聚焦人工智能与青少年运动训练的交叉领域，
-            涵盖基于计算机视觉的动作智能识别、运动损伤风险预警与青少年身心协同发展。
-            在专项领域，我是中国击剑协会A级裁判，并担任北大附属中学佩剑校队主教练，
-            执教学生获全国级赛事四金两银。
-          </span>
-        </p>
+    <blockquote class="pull reveal">
+      <p class="statement"><span class="lang-en">&ldquo;Who coaches the coach?&rdquo;</span><span class="lang-cn">&ldquo;谁来教练教练？&rdquo;</span></p>
+      <p class="label pull__source"><span class="lang-en">Invited address · 17th China Education Symposium, Harvard Graduate School of Education · 2026</span><span class="lang-cn">特邀报告 · 第十七届哈佛中国教育论坛，哈佛大学教育研究生院 · 2026</span></p>
+    </blockquote>
+  </section>
 
-        <div class="hero-meta">
-          <span><span class="label"><span class="lang-en">Email</span><span class="lang-cn">邮箱</span></span>majiayi0526@gmail.com</span>
-          <span><span class="label"><span class="lang-en">Based in</span><span class="lang-cn">所在地</span></span><span class="lang-en">Springfield, MA, USA / Beijing, China</span><span class="lang-cn">美国马萨诸塞州春田市 / 中国北京</span></span>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============ EDUCATION ============ -->
-    <section class="section">
-      <h2 class="section-title">
-        <span class="lang-en">Education</span><span class="lang-cn">教育背景</span>
-      </h2>
+  <section class="section" aria-labelledby="sec-02">
+    <div class="section__head reveal">
+      <p class="label section__num">02</p>
+      <h2 class="section__title" id="sec-02"><span class="lang-en">Education</span><span class="lang-cn">教育背景</span></h2>
+    </div>
 
-      <!-- BSU master -->
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">
-            <span class="lang-en">Beijing Sport University <span class="loc">— Beijing, China</span></span>
-            <span class="lang-cn">北京体育大学 <span class="loc">— 中国，北京</span></span>
-          </div>
-          <div class="entry-date">
-            <span class="lang-en">Sept 2024 – Jun 2027</span>
-            <span class="lang-cn">2024年9月 – 2027年6月</span>
-          </div>
-        </div>
-        <div class="entry-degree">
-          <span class="lang-en">M.S., Physical Education and Training (Research Track) · School of Competitive Athletics</span>
-          <span class="lang-cn">体育教育训练学 学术型硕士 · 竞技体育学院</span>
-        </div>
-        <div class="kv">
-          <div class="k">
-            <span class="lang-en">Core Courses</span><span class="lang-cn">核心课程</span>
-          </div>
-          <div class="v">
-            <span class="lang-en">
-              Principles of Sports Training,
-              Advanced Statistics,
-              Experimental Research Methods
-            </span>
-            <span class="lang-cn">
-              运动训练学原理，
-              高级统计学，
-              实验研究方法
-            </span>
-          </div>
-        </div>
-      </div>
+  <article class="entry reveal">
+    <p class="label entry__date"><span class="lang-en">Sept 2024 – Jun 2027</span><span class="lang-cn">2024.09 – 2027.06</span></p>
+    <div>
+      <h3 class="entry__title"><span class="lang-en">Beijing Sport University <span class="loc">— Beijing, China</span></span><span class="lang-cn">北京体育大学 <span class="loc">— 中国，北京</span></span></h3>
+      <p class="entry__meta"><span class="lang-en">M.S., Physical Education and Training (Research Track) · School of Competitive Athletics</span><span class="lang-cn">体育教育训练学 学术型硕士 · 竞技体育学院</span></p>
+      <ul class="entry__list">
+        <li><span class="lang-en">Core coursework: principles of sports training, advanced statistics, experimental research methods, advanced sport psychology, sports medicine</span><span class="lang-cn">核心课程：运动训练学原理、高级统计学、实验研究方法、高级运动心理学、运动医学</span></li>
+      </ul>
+    </div>
+  </article>
 
-      <!-- Springfield College -->
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">
-            <span class="lang-en">Springfield College <span class="loc">— Springfield, MA, USA</span></span>
-            <span class="lang-cn">美国春田学院 <span class="loc">— 美国，马萨诸塞州</span></span>
-          </div>
-          <div class="entry-date">
-            <span class="lang-en">Aug 2025 – Jun 2026</span>
-            <span class="lang-cn">2025年8月 – 2026年6月</span>
-          </div>
-        </div>
-        <div class="entry-degree">
-          <span class="lang-en">M.S., Physical Education &amp; Training · CSC Joint Master's Program</span>
-          <span class="lang-cn">体育教育训练学 · CSC 国家公派联合培养硕士</span>
-        </div>
-        <div class="kv">
-          <div class="k">
-            <span class="lang-en">Core Courses</span><span class="lang-cn">核心课程</span>
-          </div>
-          <div class="v">
-            <span class="lang-en">
-              Advanced Statistics (RSCH 720),
-              Sports Performance Analysis,
-              Strength Training
-            </span>
-            <span class="lang-cn">
-              高级统计学（RSCH 720），
-              运动表现分析，
-              力量训练
-            </span>
-          </div>
-        </div>
-      </div>
+  <article class="entry reveal">
+    <p class="label entry__date"><span class="lang-en">Aug 2025 – Jun 2026</span><span class="lang-cn">2025.08 – 2026.06</span></p>
+    <div>
+      <h3 class="entry__title"><span class="lang-en">Springfield College <span class="loc">— Springfield, MA, USA</span></span><span class="lang-cn">美国春田学院 <span class="loc">— 美国，马萨诸塞州</span></span></h3>
+      <p class="entry__meta"><span class="lang-en">M.S., Physical Education &amp; Training · CSC-sponsored joint master's program</span><span class="lang-cn">体育教育训练学 · 国家留学基金委（CSC）公派联合培养</span></p>
+      <ul class="entry__list">
+        <li><span class="lang-en">Big data in sport science, motor skill development and analysis, evidence-based practice — all A grades</span><span class="lang-cn">体育科学中的大数据、运动技能的发展与分析、循证实践等，全 A 通过</span></li>
+      </ul>
+    </div>
+  </article>
 
-      <!-- CUHK exchange -->
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">
-            <span class="lang-en">The Chinese University of Hong Kong <span class="loc">— Hong Kong, China</span></span>
-            <span class="lang-cn">香港中文大学 <span class="loc">— 中国，香港</span></span>
-          </div>
-          <div class="entry-date">
-            <span class="lang-en">Jun 2023 – Jul 2023</span>
-            <span class="lang-cn">2023年6月 – 2023年7月</span>
-          </div>
-        </div>
-        <div class="entry-degree">
-          <span class="lang-en">Short-Term Academic Exchange · All A Grades</span>
-          <span class="lang-cn">短期学术交流 · 交流期间课程全A</span>
-        </div>
-      </div>
+  <article class="entry reveal">
+    <p class="label entry__date"><span class="lang-en">Jun 2023 – Jul 2023</span><span class="lang-cn">2023.06 – 2023.07</span></p>
+    <div>
+      <h3 class="entry__title"><span class="lang-en">The Chinese University of Hong Kong <span class="loc">— Hong Kong, China</span></span><span class="lang-cn">香港中文大学 <span class="loc">— 中国，香港</span></span></h3>
+      <p class="entry__meta"><span class="lang-en">Sports Training · Short-term academic exchange</span><span class="lang-cn">运动训练学 · 短期学术交流</span></p>
+      <ul class="entry__list">
+        <li><span class="lang-en">Volleyball, karate, cycling — all A grades</span><span class="lang-cn">排球、空手道、骑行，全 A 通过</span></li>
+      </ul>
+    </div>
+  </article>
 
-      <!-- BSU bachelor -->
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">
-            <span class="lang-en">Beijing Sport University <span class="loc">— Beijing, China</span></span>
-            <span class="lang-cn">北京体育大学 <span class="loc">— 中国，北京</span></span>
-          </div>
-          <div class="entry-date">
-            <span class="lang-en">Sept 2020 – Jul 2024</span>
-            <span class="lang-cn">2020年9月 – 2024年7月</span>
-          </div>
-        </div>
-        <div class="entry-degree">
-          <span class="lang-en">B.S., Sports Training · Beijing Municipal Outstanding Graduate</span>
-          <span class="lang-cn">运动训练学 学士 · 北京市优秀毕业生</span>
-        </div>
-      </div>
-    </section>
+  <article class="entry reveal">
+    <p class="label entry__date"><span class="lang-en">Sept 2020 – Jun 2024</span><span class="lang-cn">2020.09 – 2024.06</span></p>
+    <div>
+      <h3 class="entry__title"><span class="lang-en">Beijing Sport University <span class="loc">— Beijing, China</span></span><span class="lang-cn">北京体育大学 <span class="loc">— 中国，北京</span></span></h3>
+      <p class="entry__meta"><span class="lang-en">B.S., Sports Training · Beijing Municipal Outstanding Graduate</span><span class="lang-cn">运动训练学 学士 · 北京市优秀毕业生</span></p>
+      <ul class="entry__list">
+        <li><span class="lang-en">Graduated ranked 2 of 186 in cohort</span><span class="lang-cn">专业排名 2/186</span></li>
+        <li><span class="lang-en">Core coursework: basketball, track &amp; field, swimming, sports training theory, sport psychology, PE curriculum &amp; pedagogy, sports medicine</span><span class="lang-cn">核心课程：篮球、田径、游泳、运动训练学、运动心理学、体育课程教学论、运动医学</span></li>
+      </ul>
+    </div>
+  </article>
 
-  </main>
+  </section>
+
+
+  <section class="cta reveal" aria-labelledby="cta-title">
+    <p class="label label--accent"><span class="lang-en">Get in touch</span><span class="lang-cn">联系方式</span></p>
+    <h2 class="cta__title" id="cta-title"><span class="lang-en">Open to research collaboration and academic exchange.</span><span class="lang-cn">欢迎科研合作与学术交流。</span></h2>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="mailto:majiayi0526@gmail.com">majiayi0526@gmail.com <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="https://github.com/majiayi0526" rel="me noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__col">
+      <p class="footer__name"><span class="lang-en">Jiayi Ma</span><span class="lang-cn">马佳艺</span></p>
+      <p class="footer__blurb"><span class="lang-en">Sabre fencer, Grade-A referee, and sport-science researcher bringing computer vision and language models onto the piste.</span><span class="lang-cn">佩剑运动员、A级裁判、运动科学研究者——把计算机视觉与语言模型带上剑道。</span></p>
+    </div>
+    <div class="footer__col">
+      <p class="label"><span class="lang-en">Site</span><span class="lang-cn">站内</span></p>
+      <ul>
+        <li><a href="research.html"><span class="lang-en">Research</span><span class="lang-cn">科研成果</span></a></li>
+        <li><a href="fencing.html"><span class="lang-en">Sport &amp; Coaching</span><span class="lang-cn">体育专业经历</span></a></li>
+        <li><a href="awards.html"><span class="lang-en">Honors &amp; Certificates</span><span class="lang-cn">荣誉与证书</span></a></li>
+        <li><a href="cv.html"><span class="lang-en">Curriculum Vitae</span><span class="lang-cn">个人简历</span></a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <p class="label"><span class="lang-en">Elsewhere</span><span class="lang-cn">站外</span></p>
+      <ul>
+        <li><a href="mailto:majiayi0526@gmail.com">majiayi0526@gmail.com</a></li>
+        <li><a href="https://github.com/majiayi0526" rel="me noopener">GitHub · majiayi0526</a></li>
+        <li><a href="JiayiMa_CV.pdf"><span class="lang-en">Download CV (PDF)</span><span class="lang-cn">下载简历 PDF</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__base">
+    <p class="label">© 2026 <span class="lang-en">Jiayi Ma</span><span class="lang-cn">马佳艺</span></p>
+    <p class="label"><span class="lang-en">Beijing, China · Springfield, MA, USA</span><span class="lang-cn">中国北京 · 美国马萨诸塞州春田</span></p>
+  </div>
+</footer>
+
 </body>
 </html>
