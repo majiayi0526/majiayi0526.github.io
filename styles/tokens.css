@@ -45,17 +45,16 @@
   --rule-strong: #333941;
 
   /* ---- type faces --------------------------------------
-     Deliberate three-face pairing, all system-resident:
-     no webfont request, no render block, no CN CDN risk.
-       sans  — structure and body
-       serif — statement lines only (the pull-quote voice)
-       mono  — every piece of metadata: dates, labels, counts
+     Deliberate two-face pairing, both system-resident: no
+     webfont request, no render block, no CN CDN risk.
+       sans — structure and body
+       mono — every piece of metadata: dates, labels, counts
+     The contrast between them, plus a wide scale range, is
+     what carries the hierarchy — not a display typeface.
      ------------------------------------------------------ */
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
           "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
           "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, sans-serif;
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
-          "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
           "Roboto Mono", "Courier New", monospace;
 

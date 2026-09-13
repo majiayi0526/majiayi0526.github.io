@@ -339,23 +339,6 @@
   .section__sub { grid-column: 1; margin-top: var(--s-3); }
 }
 
-/* ---- institution strip ------------------------------------ */
-.strip {
-  margin-top: clamp(var(--s-8), 7vw, var(--s-9));
-  padding: var(--s-6) 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s-4) clamp(var(--s-5), 3vw, var(--s-8));
-}
-.strip__item { color: var(--ink-soft); }
-@media (max-width: 479px) {
-  .strip { gap: var(--s-3) var(--s-5); padding: var(--s-5) 0; }
-}
-.strip__item .label { color: inherit; }
-
 /* ============================================================
    FOOTER
    ============================================================ */

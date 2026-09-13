@@ -231,7 +231,6 @@
 .banner img { width: 100%; filter: saturate(0.82) contrast(1.04) brightness(0.92); }
 @media (max-width: 639px) {
   .banner figcaption { position: static; padding: var(--s-3) 0 0; background: none; }
-  .pull { padding-left: var(--s-4); padding-block: var(--s-5); }
   .cta__title { max-width: none; }
 }
 .banner figcaption {
@@ -240,14 +239,6 @@
   padding: var(--s-6) var(--s-5) var(--s-4);
   background: linear-gradient(transparent, var(--scrim));
   color: var(--ink-soft);
-}
-
-/* ---- pull statement block ---------------------------------- */
-.pull {
-  margin: var(--s-7) 0 0;
-  padding: var(--s-6) 0 var(--s-6) clamp(var(--s-5), 3vw, var(--s-7));
-  border-left: 2px solid var(--accent);
-  max-width: 56ch;
 }
 
 /* ---- contact rail ------------------------------------------ */
@@ -283,8 +274,8 @@
 }
 :root[data-lang="cn"] .cta__title { letter-spacing: 0.02em; }
 
-/* ---- small notes under a stat / under a pull quote ---------
-   Both exist so no markup needs a style attribute, which the
+/* ---- small note under a stat ------------------------------
+   Exists so the markup needs no style attribute, which the
    site's style-src CSP forbids.
    ----------------------------------------------------------- */
 .stat__note {
@@ -294,4 +285,3 @@
   line-height: 1.55;
   max-width: 26ch;
 }
-.pull__source { margin-top: var(--s-4); }
