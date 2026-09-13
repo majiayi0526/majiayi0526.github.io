@@ -27,7 +27,12 @@ js/
   nav.js          移动端菜单
   reveal.js       滚动入场动画
 
-photo.jpg         证件照        epee-coach.png   Épée Coach 项目截图
+tools/
+  make-portrait.py  由 photo.jpg 生成 portrait.png 的脚本（见下）
+
+photo.jpg         原始证件照（仅用于社交分享预览图 og:image）
+portrait.png      首页用人像，由上面的脚本生成
+epee-coach.png    Épée Coach 项目截图
 JiayiMa_CV.pdf    简历 PDF
 ```
 
@@ -41,13 +46,24 @@ JiayiMa_CV.pdf    简历 PDF
 
 两个都要改，否则切换语言时会出现一边是旧内容。
 
-**换照片** — 用同名文件覆盖 `photo.jpg`，然后更新 HTML 里 `<img>` 的 `width` 和 `height`
-为新图的真实像素尺寸（防止加载时页面跳动）。
+**换照片** — 首页人像是 `portrait.png`，由 `photo.jpg` 经脚本处理而来：白底被染成
+与页面完全相同的象牙色，边缘和下半部做了渐隐，所以它看起来是"长在纸上"而不是"贴在
+纸上"。换照片的步骤：
+
+1. 用新照片覆盖 `photo.jpg`（同样建议白底证件照）
+2. 打开 `tools/make-portrait.py`，把 `CROP` 改成新图的头肩范围
+3. 运行 `python3 tools/make-portrait.py`（需要 pillow 和 numpy）
+4. 把 `index.html` 里 `portrait.png` 那个 `<img>` 的 `width`/`height`
+   改成脚本输出的尺寸
+
+注意：这个效果依赖**页面底色是纯平的**。如果给 `--glow-*` 加回渐变，人像的平底
+就会和页面对不上，又会露出一个矩形。
 
 **换简历 PDF** — 覆盖 `JiayiMa_CV.pdf` 即可，文件名保持不变。
 
-**换整套配色** — `styles/themes/` 里有 5 套备选（steel 钢蓝 / ivory 象牙浅色 /
-olive 橄榄黄铜 / navy 学院藏青 / graphite 石墨信号）。在**每个** `.html` 的
+**换整套配色** — 当前默认是象牙浅色。`styles/themes/` 里有 5 套备选
+（wine 佩剑酒红暗色 / steel 钢蓝 / olive 橄榄黄铜 / navy 学院藏青 /
+graphite 石墨信号）。在**每个** `.html` 的
 `<link rel="stylesheet" href="styles/adaptive.css">` 那一行**后面**加一行即可：
 
 ```html

@@ -24,6 +24,7 @@
   backdrop-filter: saturate(160%) blur(14px);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   border-bottom: 1px solid var(--rule-soft);
+  box-shadow: var(--shadow-nav);
 }
 .nav__inner {
   max-width: var(--w-page);
@@ -142,159 +143,116 @@
 }
 
 /* ============================================================
-   HERO
+   HERO — centred, type-led
+
+   The portrait used to sit beside the name at hero scale, which
+   made a formal ID photograph the loudest thing on the page. The
+   composition is inverted here: the name carries the screen and
+   the portrait follows it, smaller, with its lower edge
+   dissolving into the paper.
    ============================================================ */
-.hero { padding: clamp(3.5rem, 2rem + 6vw, 7rem) 0 0; }
-
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1.38fr 0.62fr;
-  gap: clamp(var(--s-6), 4vw, var(--s-9));
-  align-items: end;
+.hero {
+  padding: clamp(4rem, 2rem + 8vw, 9rem) 0 0;
+  text-align: center;
 }
 
-.hero__eyebrow {
-  display: flex;
-  align-items: center;
-  gap: var(--s-3);
-  margin-bottom: var(--s-5);
-}
-.hero__eyebrow::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--rule-strong), transparent);
-}
+.hero__eyebrow { margin-bottom: var(--s-6); }
 
 .hero__name {
   font-size: var(--t-display);
-  font-weight: 500;
-  line-height: 0.9;
+  font-weight: 600;
+  line-height: 1.02;
   letter-spacing: var(--track-display);
-  margin-bottom: var(--s-5);
+  margin: 0 auto var(--s-5);
+  max-width: 16ch;
 }
 :root[data-lang="cn"] .hero__name {
-  letter-spacing: 0.08em;
-  line-height: 1.02;
-  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-weight: 650;
+  /* the tracking adds a trailing gap that breaks optical centring */
+  text-indent: 0.14em;
 }
 
 .hero__role {
   font-size: var(--t-h3);
   font-weight: 450;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--ink-soft);
-  max-width: 34ch;
-  margin-bottom: var(--s-5);
+  max-width: 42ch;
+  margin: 0 auto var(--s-5);
 }
-.hero__role .sep { color: var(--accent); padding: 0 2px; }
+.hero__role .sep { color: var(--accent); padding: 0 4px; }
 
 .hero__lede {
   font-size: var(--t-lede);
-  line-height: 1.7;
+  line-height: 1.72;
   color: var(--ink-soft);
-  max-width: 54ch;
-  margin-bottom: var(--s-6);
+  max-width: 56ch;
+  margin: 0 auto var(--s-7);
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--s-3);
-  margin-bottom: var(--s-5);
 }
 
 /* ---- portrait ---------------------------------------------
-   The source portrait is a formal white-ground ID photo. Rather
-   than fight it, it is mounted as a light plate on the dark
-   field — a framed print — and pulled down so it overlaps the
-   rule beneath the hero. That overlap is the depth cue.
+   The source file is pre-composited: its background is already
+   the page colour and its lower edge fades out, so it needs no
+   frame, no border and no shadow. It simply sits on the paper.
    ----------------------------------------------------------- */
 .portrait {
-  margin: 0;
-  position: relative;
-  transform: translateY(clamp(16px, 3vw, 40px));
+  margin: clamp(var(--s-7), 5vw, var(--s-9)) auto 0;
+  width: clamp(200px, 26vw, 330px);
 }
-.portrait__frame {
-  position: relative;
-  background: var(--plate);
-  border-radius: var(--r-lg);
-  padding: 10px 10px 0;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.10) inset,
-    var(--shadow-plate),
-    0 0 0 1px var(--rule);
-  overflow: hidden;
-}
-.portrait__frame img {
-  width: 100%;
-  border-radius: var(--r-md) var(--r-md) 0 0;
-  filter: saturate(0.9) contrast(1.03);
-}
-.portrait__caption {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--s-3);
-  margin-top: var(--s-3);
-  color: var(--muted);
-}
+.portrait picture,
+.portrait img { display: block; width: 100%; }
 
-/* ---- hero stat rail ---------------------------------------
-   Hairline-separated numerals, deliberately NOT cards.
-   ----------------------------------------------------------- */
+/* ---- stat rail --------------------------------------------- */
 .hero__stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--s-5);
-  margin-top: clamp(var(--s-8), 7vw, var(--s-9));
-  padding-top: var(--s-6);
+  gap: var(--s-6) var(--s-5);
+  margin-top: clamp(var(--s-7), 6vw, var(--s-9));
+  padding-top: var(--s-7);
   border-top: 1px solid var(--rule);
+  text-align: center;
 }
 .stat__value {
-  font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3rem);
-  font-weight: 500;
+  font-size: clamp(2rem, 1.2rem + 2.4vw, 3.1rem);
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.04em;
   margin-bottom: var(--s-3);
 }
 .stat__value .unit {
-  font-size: 0.44em;
-  font-weight: 500;
+  font-size: 0.42em;
+  font-weight: 600;
   letter-spacing: 0;
   color: var(--accent-text);
   margin-left: 3px;
 }
-
-/* tablet: keep the portrait beside the text, but give it more room
-   than the desktop ratio so it does not turn into a thumbnail */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero__grid { grid-template-columns: 1.15fr 0.85fr; }
-  .hero__role { max-width: none; }
-  .hero__lede { max-width: none; }
+.stat__note {
+  margin: var(--s-2) auto 0;
+  color: var(--ink-soft);
+  font-size: var(--t-small);
+  line-height: 1.55;
+  max-width: 24ch;
 }
 
-/* phone: portrait leads, text follows */
-@media (max-width: 767px) {
-  .hero { padding-top: clamp(2rem, 1rem + 5vw, 3.5rem); }
-  .hero__grid { grid-template-columns: 1fr; align-items: start; }
-  .portrait {
-    transform: none;
-    max-width: 210px;
-    order: -1;
-    margin-bottom: var(--s-6);
-  }
-  .hero__name { line-height: 0.96; }
-  .hero__actions { gap: var(--s-2); }
-  .hero__actions .btn { flex: 1 1 auto; justify-content: center; }
-}
-
-/* stat rail: 4 across on laptop, 2 across everywhere narrower */
 @media (max-width: 1023px) {
   .hero__stats { grid-template-columns: repeat(2, 1fr); gap: var(--s-7) var(--s-5); }
 }
+@media (max-width: 767px) {
+  .hero { padding-top: clamp(2.5rem, 1rem + 6vw, 4rem); }
+  .hero__actions { gap: var(--s-2); }
+  .hero__actions .btn { flex: 1 1 auto; justify-content: center; }
+  .portrait { width: clamp(180px, 52vw, 240px); }
+}
 @media (max-width: 479px) {
   .hero__stats { gap: var(--s-6) var(--s-4); }
-  .stat__note { max-width: none; }
 }
 
 /* ============================================================
@@ -304,39 +262,33 @@
 .section--last { padding-bottom: var(--s-section); }
 
 .section__head {
-  display: grid;
-  grid-template-columns: 4.25rem 1fr;
-  gap: var(--s-5);
-  align-items: baseline;
+  max-width: 62ch;
+  margin: 0 auto var(--s-8);
   padding-bottom: var(--s-6);
-  margin-bottom: var(--s-7);
   border-bottom: 1px solid var(--rule);
+  text-align: center;
 }
-.section__num { color: var(--accent-text); padding-top: 0.55em; }
+.section__num {
+  display: block;
+  margin-bottom: var(--s-4);
+  color: var(--accent-text);
+}
 .section__title {
   font-size: var(--t-h1);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: var(--track-display);
 }
-:root[data-lang="cn"] .section__title { letter-spacing: 0.02em; }
+:root[data-lang="cn"] .section__title { letter-spacing: 0.04em; }
 .section__sub {
-  grid-column: 2;
-  margin-top: var(--s-4);
-  max-width: var(--w-text);
+  margin: var(--s-4) auto 0;
   color: var(--ink-soft);
   font-size: var(--t-lede);
-  line-height: 1.7;
+  line-height: 1.72;
 }
 
 @media (max-width: 767px) {
-  .section__head {
-    grid-template-columns: 1fr;
-    gap: var(--s-2);
-    padding-bottom: var(--s-5);
-    margin-bottom: var(--s-6);
-  }
-  .section__num { padding-top: 0; }
-  .section__sub { grid-column: 1; margin-top: var(--s-3); }
+  .section__head { margin-bottom: var(--s-7); padding-bottom: var(--s-5); }
+  .section__num { margin-bottom: var(--s-3); }
 }
 
 /* ============================================================

@@ -2,26 +2,32 @@
    Components — buttons, entries, cards, tags
    ============================================================ */
 
-/* ---- buttons ---------------------------------------------- */
+/* ---- buttons -----------------------------------------------
+   Mono uppercase is reserved for metadata. Interface controls
+   speak in the body face, sentence case, on a pill — the shape
+   language of the surrounding light surfaces.
+   ------------------------------------------------------------ */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: var(--s-3);
-  padding: 13px 22px;
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--r-sm);
-  font-family: var(--mono);
-  font-size: var(--t-label);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
+  gap: var(--s-2);
+  padding: 12px 26px;
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  font-family: var(--sans);
+  font-size: var(--t-body);
+  font-weight: 500;
+  letter-spacing: -0.005em;
   color: var(--ink);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
   cursor: pointer;
   transition: transform var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out),
               background var(--dur-fast) var(--ease-out),
               color var(--dur-fast) var(--ease-out);
 }
-.btn:hover { transform: translateY(-2px); border-color: var(--ink-soft); }
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
 .btn:active { transform: translateY(0); }
 .btn .arrow { transition: transform var(--dur-base) var(--ease-out); }
 .btn:hover .arrow { transform: translateX(4px); }
@@ -117,12 +123,13 @@
   display: flex;
   flex-direction: column;
   background: var(--surface);
-  border: 1px solid var(--rule);
+  border: 1px solid transparent;
   border-radius: var(--r-lg);
   padding: clamp(var(--s-5), 2.4vw, var(--s-7));
   overflow: hidden;
+  box-shadow: var(--shadow-card);
   transition: transform var(--dur-base) var(--ease-out),
-              border-color var(--dur-base) var(--ease-out);
+              box-shadow var(--dur-base) var(--ease-out);
 }
 .card::before {
   content: "";
@@ -134,7 +141,7 @@
   transform-origin: left;
   transition: transform var(--dur-slow) var(--ease-out);
 }
-.card:hover { transform: translateY(-3px); border-color: var(--rule-strong); }
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
 .card:hover::before { transform: scaleX(1); }
 
 .card__num { color: var(--accent-text); margin-bottom: var(--s-4); }
@@ -185,9 +192,10 @@
 }
 .tag {
   display: inline-block;
-  padding: 5px 11px;
-  border: 1px solid var(--rule-strong);
-  border-radius: 100px;
+  padding: 5px 12px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
   font-family: var(--mono);
   font-size: var(--t-label);
   letter-spacing: 0.08em;
@@ -195,7 +203,7 @@
   transition: border-color var(--dur-fast) var(--ease-out),
               color var(--dur-fast) var(--ease-out);
 }
-.tag:hover { border-color: var(--accent); color: var(--ink); }
+.tag:hover { border-color: var(--rule-strong); color: var(--ink); }
 .tag--accent { border-color: var(--accent-deep); color: var(--accent-text); }
 
 /* ---- medal row: coached results ---------------------------- */
@@ -226,9 +234,10 @@
   border-radius: var(--r-lg);
   overflow: hidden;
   border: 1px solid var(--rule);
+  box-shadow: var(--shadow-card);
   position: relative;
 }
-.banner img { width: 100%; filter: saturate(0.82) contrast(1.04) brightness(0.92); }
+.banner img { width: 100%; }
 @media (max-width: 639px) {
   .banner figcaption { position: static; padding: var(--s-3) 0 0; background: none; }
   .cta__title { max-width: none; }
@@ -238,7 +247,7 @@
   left: 0; right: 0; bottom: 0;
   padding: var(--s-6) var(--s-5) var(--s-4);
   background: linear-gradient(transparent, var(--scrim));
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 /* ---- contact rail ------------------------------------------ */
@@ -252,27 +261,27 @@
   padding: var(--s-5) 0;
   border-top: 1px solid var(--rule);
 }
-.contact__value { font-size: var(--t-h3); font-weight: 500; margin-top: var(--s-3); }
+.contact__value { font-size: var(--t-h3); font-weight: 550; margin-top: var(--s-3); }
 @media (max-width: 639px) { .contact { grid-template-columns: 1fr; gap: 0; } }
 
 /* ---- closing call ------------------------------------------ */
 .cta {
   margin-top: var(--s-section);
-  padding: clamp(var(--s-7), 5vw, var(--s-9)) clamp(var(--s-5), 4vw, var(--s-8));
-  border: 1px solid var(--rule);
+  padding: clamp(var(--s-8), 6vw, var(--s-9)) clamp(var(--s-5), 4vw, var(--s-8));
   border-radius: var(--r-lg);
-  background:
-    radial-gradient(60ch 30ch at 8% 0%, var(--glow-a), transparent 70%),
-    var(--surface);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  text-align: center;
 }
+.cta .hero__actions { justify-content: center; }
 .cta__title {
   font-size: var(--t-h1);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: var(--track-display);
-  margin: var(--s-4) 0 var(--s-5);
-  max-width: 20ch;
+  margin: var(--s-4) auto var(--s-6);
+  max-width: 22ch;
 }
-:root[data-lang="cn"] .cta__title { letter-spacing: 0.02em; }
+:root[data-lang="cn"] .cta__title { letter-spacing: 0.04em; }
 
 /* ---- small note under a stat ------------------------------
    Exists so the markup needs no style attribute, which the

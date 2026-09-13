@@ -1,48 +1,60 @@
 /* ============================================================
    马佳艺 · Jiayi Ma — Design tokens
-   Direction: dark editorial. Steel + sabre wine.
-   One dominant field (near-black), one accent (wine red).
+   Direction: ivory editorial. Warm paper, deep ink, oxblood.
+   Composition follows the centred, type-led restraint of a
+   product page: the words carry the page, the image supports.
+   One dominant field (warm off-white), one accent (oxblood).
    ============================================================ */
 
 :root {
   /* ---- surface ladder ---------------------------------- */
-  --bg:          #0B0C0E;
-  --bg-lift:     #101215;
-  --surface:     #15181C;
-  --surface-2:   #1C2026;
-  --plate:       #F2F1ED;   /* warm light plate — portrait framing */
+  --bg:          #F5F3EE;   /* warm paper */
+  --bg-lift:     #FFFFFF;
+  --surface:     #FFFFFF;
+  --surface-2:   #FAF9F6;
 
   /* ---- ink ---------------------------------------------- */
-  --ink:         #ECEDEE;   /* 16.4:1 on --bg */
-  --ink-soft:    #A8ACB2;   /*  8.6:1 */
-  --muted:       #7C838C;   /*  5.2:1 — smallest text still AA */
-  --ink-plate:   #14161A;   /* ink on the light plate */
+  --ink:         #14161A;   /* 16.3:1 on --bg */
+  --ink-soft:    #3D434B;   /*  9.0:1 */
+  --muted:       #5F6670;   /*  5.2:1 — smallest text still AA */
 
-  /* ---- accent: sabre wine ------------------------------- */
-  --accent:      #C2354A;   /* 3.6:1 — large text, rules, marks only */
-  --accent-text: #E8677C;   /* 6.2:1 — safe for small accent text */
-  --accent-deep: #5E1224;   /* fills, glow */
+  /* ---- accent: oxblood ---------------------------------- */
+  --accent:      #8C1D2F;   /*  8.1:1 */
+  --accent-text: #7A1526;   /*  9.6:1 — safe at any size */
+  --accent-deep: #5E1224;
 
   /* ---- atmosphere & chrome ------------------------------
      Everything the eye reads as "the palette" lives in tokens,
      so a new colour scheme is a token swap and nothing else.
      ------------------------------------------------------ */
-  --nav-bg:        rgba(11, 12, 14, 0.78);
-  --glow-a:        rgba(194, 53, 74, 0.16);
-  --glow-b:        rgba(64, 84, 120, 0.13);
-  --glow-c:        rgba(94, 18, 36, 0.10);
-  --noise-opacity: 0.035;
-  --noise-blend:   screen;
-  --selection-bg:  #5E1224;
+  --nav-bg:        rgba(245, 243, 238, 0.72);
+  /* The field is deliberately flat. A radial wash would make the
+     paper lighter in some places than others, and the portrait —
+     whose own background is one flat ivory — would then read as a
+     rectangular patch sitting on top of it. Flat paper, no patch. */
+  --glow-a:        transparent;
+  --glow-b:        transparent;
+  --glow-c:        transparent;
+  --noise-opacity: 0.018;
+  --noise-blend:   multiply;
+  --selection-bg:  #8C1D2F;
   --selection-ink: #ffffff;
-  --shadow-plate:  0 30px 70px -28px rgba(0, 0, 0, 0.9);
-  --btn-primary-hover: #D33D54;
-  --scrim:         rgba(11, 12, 14, 0.92);
+  --btn-primary-hover: #751827;
+  --scrim:         rgba(20, 22, 26, 0.72);
+
+  /* ---- elevation ----------------------------------------
+     Light surfaces need shadow, not borders, to separate. Two
+     stacked shadows read as one soft, physical lift. */
+  --shadow-card:   0 1px 2px rgba(28, 24, 16, 0.05),
+                   0 8px 24px -12px rgba(28, 24, 16, 0.14);
+  --shadow-lift:   0 2px 6px rgba(28, 24, 16, 0.06),
+                   0 20px 44px -18px rgba(28, 24, 16, 0.20);
+  --shadow-nav:    0 1px 0 rgba(28, 24, 16, 0.06);
 
   /* ---- rules -------------------------------------------- */
-  --rule:        #24282E;
-  --rule-soft:   #191C20;
-  --rule-strong: #333941;
+  --rule:        #DCD8CF;
+  --rule-soft:   #E8E5DE;
+  --rule-strong: #C3BDB1;
 
   /* ---- type faces --------------------------------------
      Deliberate two-face pairing, both system-resident: no
@@ -115,7 +127,8 @@
   --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
 
   /* ---- shape -------------------------------------------- */
-  --r-sm: 3px;
-  --r-md: 6px;
-  --r-lg: 14px;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-pill: 980px;
 }

@@ -68,15 +68,10 @@
    ============================================================ */
 @media (max-height: 520px) and (orientation: landscape) {
   .hero { padding-top: var(--s-6); }
-  .hero__grid { grid-template-columns: 1.5fr 0.5fr; align-items: start; }
-  .portrait {
-    order: 0;
-    transform: none;
-    max-width: 150px;
-    margin-bottom: 0;
-  }
-  .hero__name { font-size: clamp(2.4rem, 1rem + 5vw, 4rem); }
-  .hero__lede { margin-bottom: var(--s-5); }
+  .hero__name { font-size: clamp(2.2rem, 1rem + 5vw, 3.6rem); }
+  .hero__lede { margin-bottom: var(--s-6); }
+  /* a short viewport cannot afford a tall portrait below the fold */
+  .portrait { width: clamp(140px, 18vw, 190px); margin-top: var(--s-6); }
   .hero__stats { grid-template-columns: repeat(4, 1fr); margin-top: var(--s-7); }
   .nav__menu { max-height: calc(100dvh - var(--nav-h)); }
 }
@@ -106,6 +101,8 @@
    chrome is dropped, and links reveal their destinations.
    ============================================================ */
 @media print {
+  /* The screen palette is already ink on paper, so printing only has
+     to drop the warmth and the elevation — not invert anything. */
   :root {
     --bg: #fff;
     --bg-lift: #fff;
@@ -114,14 +111,16 @@
     --ink: #000;
     --ink-soft: #222;
     --muted: #555;
-    --accent: #7A1526;
-    --accent-text: #7A1526;
     --rule: #bbb;
     --rule-soft: #ddd;
     --rule-strong: #999;
+    --shadow-card: none;
+    --shadow-lift: none;
+    --shadow-nav: none;
   }
 
   body { background: #fff; color: #000; }
+  .portrait { display: none; }
   body::before, body::after { display: none; }
 
   .nav, .footer, .skip-link, .hero__actions, .cta, .lang-switch { display: none; }
@@ -134,9 +133,8 @@
   .entry, .card, .medal, .stat { break-inside: avoid; }
   .section__head { break-after: avoid; }
 
-  .card, .cta { border: 1px solid var(--rule); background: none; }
+  .card, .cta { border: 1px solid var(--rule); background: none; box-shadow: none; }
   .card::before { display: none; }
-  .portrait__frame { box-shadow: none; border: 1px solid var(--rule); }
   .banner img { filter: none; }
 
   /* a printed page cannot be clicked — show where a link went */
