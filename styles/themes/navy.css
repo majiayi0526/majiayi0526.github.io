@@ -1,0 +1,11 @@
+/* 05 · 学院藏青 Court Navy — collegiate, warm, approachable */
+:root{
+ --bg:#0A0F1C; --bg-lift:#0E1526; --surface:#131B2E; --surface-2:#1A2338; --plate:#F1F3F8;
+ --ink:#EBEEF5; --ink-soft:#A3AEC4; --muted:#7A869D; --ink-plate:#0D1424;
+ --accent:#D9A02B; --accent-text:#EFBF55; --accent-deep:#5A3F0A;
+ --rule:#1D2740; --rule-soft:#151D32; --rule-strong:#2B3550;
+ --nav-bg:rgba(10,15,28,.80);
+ --glow-a:rgba(217,160,43,.12); --glow-b:rgba(60,100,180,.14); --glow-c:rgba(90,63,10,.10);
+ --selection-bg:#5A3F0A; --selection-ink:#fff;
+ --btn-primary-hover:#E8B13E; --scrim:rgba(10,15,28,.92);
+}

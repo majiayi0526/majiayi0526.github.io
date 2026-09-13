@@ -1,0 +1,16 @@
+/* 03 · 象牙学刊 Ivory Editorial — light, paper, journal */
+:root{
+ --bg:#F5F3EE; --bg-lift:#FFFFFF; --surface:#FFFFFF; --surface-2:#FAF9F6; --plate:#FFFFFF;
+ --ink:#14161A; --ink-soft:#3D434B; --muted:#5F6670; --ink-plate:#14161A;
+ --accent:#8C1D2F; --accent-text:#7A1526; --accent-deep:#5E1224;
+ --rule:#D9D5CC; --rule-soft:#E7E4DC; --rule-strong:#B8B2A6;
+ --nav-bg:rgba(245,243,238,.82);
+ --glow-a:rgba(140,29,47,.07); --glow-b:rgba(120,110,90,.06); --glow-c:rgba(94,18,36,.05);
+ --noise-opacity:.030; --noise-blend:multiply;
+ --selection-bg:#8C1D2F; --selection-ink:#fff;
+ --shadow-plate:0 24px 56px -30px rgba(40,34,24,.45);
+ --btn-primary-hover:#751827; --scrim:rgba(245,243,238,.94);
+}
+/* the portrait plate is no longer a light shape on a dark field, so it
+   needs an edge of its own to stay a distinct object */
+:root .portrait__frame{ border:1px solid var(--rule); }

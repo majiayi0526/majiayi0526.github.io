@@ -1,0 +1,11 @@
+/* 04 · 橄榄黄铜 Olive Brass — warm, understated, mature */
+:root{
+ --bg:#0D0F0C; --bg-lift:#12150F; --surface:#181C14; --surface-2:#1F241A; --plate:#F3F1E8;
+ --ink:#EDEDE6; --ink-soft:#A9AC9F; --muted:#7E8276; --ink-plate:#15170F;
+ --accent:#B08D3F; --accent-text:#D4B168; --accent-deep:#4A3A14;
+ --rule:#262A20; --rule-soft:#1C2017; --rule-strong:#373D2D;
+ --nav-bg:rgba(13,15,12,.78);
+ --glow-a:rgba(176,141,63,.13); --glow-b:rgba(96,120,80,.10); --glow-c:rgba(74,58,20,.12);
+ --selection-bg:#4A3A14; --selection-ink:#fff;
+ --btn-primary-hover:#C29C48; --scrim:rgba(13,15,12,.92);
+}

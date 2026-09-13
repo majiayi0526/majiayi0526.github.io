@@ -1,0 +1,147 @@
+/* ============================================================
+   Adaptive — concerns that cut across every component:
+   input type, orientation, very large displays, and print.
+   Loaded last so it can correct the layers above it.
+   ============================================================ */
+
+/* ============================================================
+   TOUCH INPUT
+   A finger needs ~44px. A mouse does not, so the larger targets
+   are applied only where the pointer is actually coarse rather
+   than padding the desktop layout for no reason.
+   ============================================================ */
+@media (pointer: coarse) {
+  .nav__link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .nav__toggle,
+  .btn {
+    min-height: 44px;
+  }
+  .lang-switch button {
+    min-width: 48px;
+    min-height: 40px;
+  }
+  .skip-link { min-height: 44px; display: flex; align-items: center; }
+  .footer__col li { margin-bottom: var(--s-2); }
+  .footer__col a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+}
+
+/* ============================================================
+   HOVER-CAPABLE POINTERS ONLY
+   On a touch screen a :hover state latches after the tap and
+   stays stuck, so every hover-only movement is switched off
+   where hovering is not a real gesture. Colour feedback on
+   :active is kept — that one reads correctly on touch.
+   ============================================================ */
+@media (hover: none) {
+  .btn:hover,
+  .card:hover,
+  .portrait:hover {
+    transform: none;
+  }
+  .btn:hover { border-color: var(--rule-strong); }
+  .btn--primary:hover { background: var(--accent); border-color: var(--accent); }
+  .card:hover { border-color: var(--rule); }
+  .card:hover::before { transform: scaleX(0); }
+  .btn:hover .arrow { transform: none; }
+  .tag:hover { border-color: var(--rule-strong); color: var(--ink-soft); }
+  .link:hover::after { transform: scaleX(0); }
+  .nav__link:hover::after { transform: scaleX(0); }
+  .nav__link.is-active::after { transform: scaleX(1); }
+
+  /* tapping still has to feel like something happened */
+  .btn:active { transform: scale(0.98); }
+  .card:active { border-color: var(--rule-strong); }
+  .link:active::after { transform: scaleX(1); }
+}
+
+/* ============================================================
+   LANDSCAPE PHONE
+   Short and wide: the first screen must not be all portrait.
+   ============================================================ */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { padding-top: var(--s-6); }
+  .hero__grid { grid-template-columns: 1.5fr 0.5fr; align-items: start; }
+  .portrait {
+    order: 0;
+    transform: none;
+    max-width: 150px;
+    margin-bottom: 0;
+  }
+  .hero__name { font-size: clamp(2.4rem, 1rem + 5vw, 4rem); }
+  .hero__lede { margin-bottom: var(--s-5); }
+  .hero__stats { grid-template-columns: repeat(4, 1fr); margin-top: var(--s-7); }
+  .nav__menu { max-height: calc(100dvh - var(--nav-h)); }
+}
+
+/* ============================================================
+   LARGE DISPLAYS
+   Past ~1800px a fixed 1180px column starts to look marooned.
+   The measure grows, but the reading width of body copy does
+   not — long lines are harder to read, not more impressive.
+   ============================================================ */
+@media (min-width: 1800px) {
+  :root {
+    --w-page: 1320px;
+    --t-display: 8.5rem;
+  }
+  .hero__lede { max-width: 58ch; }
+}
+
+@media (min-width: 2400px) {
+  :root { --w-page: 1440px; }
+}
+
+/* ============================================================
+   PRINT
+   A CV site gets printed. Without this it prints as a black
+   rectangle, so the palette is inverted to ink on paper, the
+   chrome is dropped, and links reveal their destinations.
+   ============================================================ */
+@media print {
+  :root {
+    --bg: #fff;
+    --bg-lift: #fff;
+    --surface: #fff;
+    --surface-2: #fff;
+    --ink: #000;
+    --ink-soft: #222;
+    --muted: #555;
+    --accent: #7A1526;
+    --accent-text: #7A1526;
+    --rule: #bbb;
+    --rule-soft: #ddd;
+    --rule-strong: #999;
+  }
+
+  body { background: #fff; color: #000; }
+  body::before, body::after { display: none; }
+
+  .nav, .footer, .skip-link, .hero__actions, .cta, .lang-switch { display: none; }
+
+  /* the print area has no gutter of its own — without this the first
+     glyph of every line sits on the trim edge and gets clipped */
+  .page { max-width: none; padding: 0 6mm; }
+  @page { margin: 14mm 12mm; }
+  .section { padding-top: var(--s-6); break-inside: auto; }
+  .entry, .card, .medal, .stat { break-inside: avoid; }
+  .section__head { break-after: avoid; }
+
+  .card, .cta { border: 1px solid var(--rule); background: none; }
+  .card::before { display: none; }
+  .portrait__frame { box-shadow: none; border: 1px solid var(--rule); }
+  .banner img { filter: none; }
+
+  /* a printed page cannot be clicked — show where a link went */
+  .link[href^="http"]::after,
+  .footer__col a[href^="http"]::after { content: " (" attr(href) ")"; }
+
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

@@ -1,0 +1,11 @@
+/* 02 · 剑道钢蓝 Piste Steel — cool, clinical, lab-forward */
+:root{
+ --bg:#0A0D12; --bg-lift:#0F131A; --surface:#141A22; --surface-2:#1B222C; --plate:#EEF2F6;
+ --ink:#E8EDF2; --ink-soft:#9FAEBF; --muted:#77879C; --ink-plate:#101720;
+ --accent:#2E8FD6; --accent-text:#6FBDF0; --accent-deep:#0E3A5C;
+ --rule:#1E2732; --rule-soft:#161D26; --rule-strong:#2C3845;
+ --nav-bg:rgba(10,13,18,.78);
+ --glow-a:rgba(46,143,214,.15); --glow-b:rgba(120,180,230,.08); --glow-c:rgba(14,58,92,.14);
+ --selection-bg:#0E3A5C; --selection-ink:#fff;
+ --btn-primary-hover:#3EA0E8; --scrim:rgba(10,13,18,.92);
+}

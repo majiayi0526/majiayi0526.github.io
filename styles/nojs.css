@@ -1,0 +1,44 @@
+/* ============================================================
+   Loaded only from inside <noscript>.
+
+   Without JavaScript the disclosure button cannot work, so the
+   navigation is re-laid out as a plain wrapped row that is always
+   visible. Every page stays reachable; nothing depends on script.
+   ============================================================ */
+@media (max-width: 1023px) {
+  .nav__inner {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: var(--s-2);
+  }
+
+  /* the button is inert without script — do not show a dead control */
+  .nav__toggle { display: none; }
+
+  .nav__menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-2) var(--s-5);
+    width: 100%;
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: 0 0 var(--s-2);
+    background: none;
+    border-bottom: 0;
+  }
+
+  .nav__link {
+    width: auto;
+    padding: var(--s-2) 0;
+    border-bottom: 0;
+    font-size: var(--t-small);
+  }
+}
+
+/* The language toggle is also script-driven. Rather than leave a dead
+   control on screen, it is hidden and the page stays in its default
+   language, which the markup already carries. */
+.lang-switch { display: none; }

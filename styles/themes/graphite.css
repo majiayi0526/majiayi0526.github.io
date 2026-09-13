@@ -1,0 +1,11 @@
+/* 06 · 石墨信号 Graphite Signal — neutral, industrial, Swiss */
+:root{
+ --bg:#101010; --bg-lift:#161616; --surface:#1C1C1C; --surface-2:#242424; --plate:#F2F2F2;
+ --ink:#F0F0F0; --ink-soft:#ABABAB; --muted:#818181; --ink-plate:#141414;
+ --accent:#E8590C; --accent-text:#FF8A47; --accent-deep:#5C2405;
+ --rule:#282828; --rule-soft:#1E1E1E; --rule-strong:#3A3A3A;
+ --nav-bg:rgba(16,16,16,.80);
+ --glow-a:rgba(232,89,12,.11); --glow-b:rgba(140,140,140,.07); --glow-c:rgba(92,36,5,.10);
+ --selection-bg:#5C2405; --selection-ink:#fff;
+ --btn-primary-hover:#F86A1E; --scrim:rgba(16,16,16,.92);
+}

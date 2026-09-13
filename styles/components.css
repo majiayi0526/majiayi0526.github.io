@@ -29,9 +29,12 @@
 .btn--primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--selection-ink);
 }
-.btn--primary:hover { background: #D33D54; border-color: #D33D54; }
+.btn--primary:hover {
+  background: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover);
+}
 
 /* ---- entry: the workhorse record row -----------------------
    Mono date rail on the left, content on the right, hairline
@@ -84,9 +87,14 @@
   transform: rotate(45deg);
 }
 
-@media (max-width: 720px) {
-  .entry { grid-template-columns: 1fr; gap: var(--s-3); }
+/* tablet: narrower date rail so the record still reads as two columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .entry { grid-template-columns: 7rem 1fr; gap: var(--s-4); }
+}
+@media (max-width: 767px) {
+  .entry { grid-template-columns: 1fr; gap: var(--s-2); padding: var(--s-5) 0; }
   .entry__date { padding-top: 0; }
+  .entry__title { margin-top: var(--s-2); }
 }
 
 /* ---- key/value row ---------------------------------------- */
@@ -99,7 +107,7 @@
   border-top: 1px solid var(--rule-soft);
 }
 .kv__v { color: var(--ink-soft); font-size: var(--t-small); }
-@media (max-width: 720px) { .kv { grid-template-columns: 1fr; gap: var(--s-2); } }
+@media (max-width: 767px) { .kv { grid-template-columns: 1fr; gap: var(--s-2); } }
 
 /* ---- cards -------------------------------------------------
    Surfaces, not a uniform grid: sizes vary by content weight.
@@ -155,14 +163,14 @@
 .grid-bento > .is-wide       { grid-column: span 4; }
 .grid-bento > .is-full       { grid-column: 1 / -1; }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .grid-bento { grid-template-columns: repeat(2, 1fr); }
   .grid-bento > *, .grid-bento > .is-wide { grid-column: span 1; }
   .grid-bento > .is-full { grid-column: 1 / -1; }
 }
-@media (max-width: 620px) {
-  .grid-3, .grid-2, .grid-bento { grid-template-columns: 1fr; }
+@media (max-width: 639px) {
+  .grid-3, .grid-2, .grid-bento { grid-template-columns: 1fr; gap: var(--s-4); }
   .grid-bento > *, .grid-bento > .is-wide { grid-column: 1 / -1; }
 }
 
@@ -209,7 +217,8 @@
 .medal--gold   .medal__value { color: #E3C06B; }
 .medal--silver .medal__value { color: #C3C9D1; }
 .medal__body { color: var(--muted); }
-@media (max-width: 720px) { .medals { grid-template-columns: 1fr 1fr; gap: var(--s-5); } }
+@media (max-width: 1023px) { .medals { grid-template-columns: 1fr 1fr; gap: var(--s-6) var(--s-5); } }
+@media (max-width: 479px) { .medals { gap: var(--s-5) var(--s-4); } }
 
 /* ---- banner image ------------------------------------------ */
 .banner {
@@ -220,11 +229,16 @@
   position: relative;
 }
 .banner img { width: 100%; filter: saturate(0.82) contrast(1.04) brightness(0.92); }
+@media (max-width: 639px) {
+  .banner figcaption { position: static; padding: var(--s-3) 0 0; background: none; }
+  .pull { padding-left: var(--s-4); padding-block: var(--s-5); }
+  .cta__title { max-width: none; }
+}
 .banner figcaption {
   position: absolute;
   left: 0; right: 0; bottom: 0;
   padding: var(--s-6) var(--s-5) var(--s-4);
-  background: linear-gradient(transparent, rgba(11, 12, 14, 0.92));
+  background: linear-gradient(transparent, var(--scrim));
   color: var(--ink-soft);
 }
 
@@ -248,7 +262,7 @@
   border-top: 1px solid var(--rule);
 }
 .contact__value { font-size: var(--t-h3); font-weight: 500; margin-top: var(--s-3); }
-@media (max-width: 620px) { .contact { grid-template-columns: 1fr; gap: 0; } }
+@media (max-width: 639px) { .contact { grid-template-columns: 1fr; gap: 0; } }
 
 /* ---- closing call ------------------------------------------ */
 .cta {
@@ -257,7 +271,7 @@
   border: 1px solid var(--rule);
   border-radius: var(--r-lg);
   background:
-    radial-gradient(60ch 30ch at 8% 0%, rgba(194, 53, 74, 0.15), transparent 70%),
+    radial-gradient(60ch 30ch at 8% 0%, var(--glow-a), transparent 70%),
     var(--surface);
 }
 .cta__title {

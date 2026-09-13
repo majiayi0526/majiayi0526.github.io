@@ -23,6 +23,22 @@
   --accent-text: #E8677C;   /* 6.2:1 — safe for small accent text */
   --accent-deep: #5E1224;   /* fills, glow */
 
+  /* ---- atmosphere & chrome ------------------------------
+     Everything the eye reads as "the palette" lives in tokens,
+     so a new colour scheme is a token swap and nothing else.
+     ------------------------------------------------------ */
+  --nav-bg:        rgba(11, 12, 14, 0.78);
+  --glow-a:        rgba(194, 53, 74, 0.16);
+  --glow-b:        rgba(64, 84, 120, 0.13);
+  --glow-c:        rgba(94, 18, 36, 0.10);
+  --noise-opacity: 0.035;
+  --noise-blend:   screen;
+  --selection-bg:  #5E1224;
+  --selection-ink: #ffffff;
+  --shadow-plate:  0 30px 70px -28px rgba(0, 0, 0, 0.9);
+  --btn-primary-hover: #D33D54;
+  --scrim:         rgba(11, 12, 14, 0.92);
+
   /* ---- rules -------------------------------------------- */
   --rule:        #24282E;
   --rule-soft:   #191C20;
@@ -51,7 +67,7 @@
   --t-lede:    clamp(1.04rem, 0.96rem + 0.42vw, 1.24rem);
   --t-body:    clamp(0.95rem, 0.92rem + 0.14vw, 1.02rem);
   --t-small:   0.875rem;
-  --t-label:   0.6875rem;   /* 11px mono labels */
+  --t-label:   clamp(0.7rem, 0.66rem + 0.15vw, 0.75rem);  /* mono labels */
 
   /* ---- tracking ----------------------------------------- */
   --track-display: -0.045em;
@@ -74,6 +90,23 @@
   /* ---- measure ------------------------------------------ */
   --w-page:    1180px;
   --w-text:    62ch;
+
+  /* ---- breakpoint scale ---------------------------------
+     One system, used everywhere. CSS cannot read custom
+     properties inside a media query, so these are recorded
+     here as the single source of truth and written literally
+     in the queries themselves.
+
+        ≤ 479    phone, small      iPhone SE / mini
+       480–767   phone, large      iPhone Pro Max, landscape
+       768–1023  tablet            iPad portrait, iPad Air
+      1024–1439  laptop            iPad landscape, MacBook Air
+      1440–1799  desktop
+        ≥ 1800   desktop, large    27"+ displays
+
+     Layout changes happen at 480 / 768 / 1024 / 1800 only.
+     ------------------------------------------------------ */
+  --nav-h: 60px;
 
   /* ---- motion ------------------------------------------- */
   --dur-fast:   160ms;
