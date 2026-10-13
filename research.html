@@ -50,7 +50,6 @@
 <main class="page" id="main">
 
   <header class="hero">
-    <p class="hero__eyebrow reveal"><span class="label label--accent"><span class="lang-en">Jiayi Ma</span><span class="lang-cn">马佳艺</span></span></p>
     <h1 class="section__title reveal"><span class="lang-en">Research</span><span class="lang-cn">科研成果</span></h1>
     <p class="hero__lede reveal"><span class="lang-en">More than ten presentations at international and national conferences on physical education, sports training and performance analysis. All of the work points one way: how do you bring computer vision and large language models onto the fencing piste without losing what a coach truly knows?</span><span class="lang-cn">累计进行国际及全国会议报告 10 余次，主题涵盖体育教育、运动训练与运动表现分析。所有工作指向一个方向：如何把计算机视觉与大语言模型带上击剑剑道，而不丢失教练真正掌握的东西？</span></p>
   </header>
@@ -158,7 +157,10 @@
         <h3 class="card__title"><span class="lang-en">Deep Court &mdash; AI runner-up</span><span class="lang-cn">深度赛场 · AI 亚军</span></h3>
         <p class="card__body"><span class="lang-en">Takes an NBA game clip and the league&rsquo;s official advanced data, and returns the broadcast with player names that follow the players, official metrics, tactical graphics and Chinese AI commentary, published to a CloudFront web player. Names are tracked with YOLO detection, OSNet re-identification, team colour and jersey-number reading checked against the official roster; an agent on Bedrock AgentCore calls tools to read the vision evidence, scoreboard and official data before committing a render plan; narration is synthesised first with Amazon Polly and the timeline is laid out around it. Accuracy comes first: unconfirmed identities are never named, and metrics are shown side by side rather than as causes.</span><span class="lang-cn">输入 NBA 比赛视频与官方深度数据，输出叠加球员姓名、官方指标、战术图示和中文 AI 解说的比赛画面，通过 CloudFront 网页发布。姓名跟着人走：YOLO 检测跟踪、OSNet 重识别、按球衣颜色分队，再结合号码识别与官方名单确认身份；Agent 运行在 Bedrock AgentCore 上，自主调用工具读取视觉证据、计分板与官方数据后提交画面计划；先用 Amazon Polly 配音，再按音频长度排时间轴。数据准确优先：未确认身份不显示姓名，指标只并列、不说因果。</span></p>
         <ul class="tags"><li class="tag">AgentCore Harness</li><li class="tag">Bedrock</li><li class="tag">SageMaker</li><li class="tag">Amazon Polly</li><li class="tag">YOLO + OSNet Re-ID</li><li class="tag">Step Functions</li><li class="tag">CloudFront</li><li class="tag">CDK</li></ul>
-        <p class="card__body"><a class="link" href="https://d3v0yhb9s202rf.cloudfront.net/work-large" rel="noopener"><span class="lang-en">Watch the work ↗</span><span class="lang-cn">观看作品 ↗</span></a></p>
+        <video class="card__video" controls playsinline preload="none" poster="deep-court-poster.jpg" width="1280" height="720">
+          <source src="deep-court.mp4" type="video/mp4">
+        </video>
+        <p class="label card__caption"><span class="lang-en">Demo &middot; live presentation at the BroadcastCode 12 final</span><span class="lang-cn">演示视频 · BroadcastCode 12 现场展示</span></p>
       </article>
       <article class="card is-wide reveal">
         <p class="label card__num"><span class="lang-en">Hackathon · full stack · Aug 2026</span><span class="lang-cn">黑客松 · 全栈 · 2026.08</span></p>

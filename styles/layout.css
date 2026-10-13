@@ -252,6 +252,16 @@
   margin: clamp(var(--s-7), 5vw, var(--s-9)) auto 0;
   width: clamp(200px, 26vw, 330px);
 }
+/* lead position: the portrait now takes the name's place at the top
+   of the hero. Smaller than before, and the dissolving lower edge
+   hands over to the role line directly beneath it. */
+.portrait--lead {
+  margin: 0 auto var(--s-5);
+  width: clamp(170px, 18vw, 230px);
+}
+@media (max-width: 767px) {
+  .portrait--lead { width: clamp(150px, 42vw, 190px); }
+}
 .portrait picture,
 .portrait img { display: block; width: 100%; }
 

@@ -148,6 +148,18 @@
 .card__title { font-size: var(--t-h3); font-weight: 550; margin-bottom: var(--s-3); }
 .card__body { color: var(--ink-soft); font-size: var(--t-small); line-height: 1.7; }
 .card .tags { margin-top: auto; padding-top: var(--s-6); }
+/* an embedded demo inside a card: full card width, its own radius,
+   and preload="none" in the markup so the 5 MB file is fetched only
+   when someone actually presses play */
+.card__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--s-5);
+  border-radius: var(--r-md);
+  background: #000;
+}
+.card__caption { margin-top: var(--s-3); }
 
 /* grids that break the "three equal boxes" default */
 .grid-3 {
