@@ -135,7 +135,6 @@
 
   .card, .cta { border: 1px solid var(--rule); background: none; box-shadow: none; }
   .card::before { display: none; }
-  .banner img { filter: none; }
 
   /* a printed page cannot be clicked — show where a link went */
   .link[href^="http"]::after,

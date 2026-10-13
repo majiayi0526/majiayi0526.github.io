@@ -228,28 +228,6 @@
 @media (max-width: 1023px) { .medals { grid-template-columns: 1fr 1fr; gap: var(--s-6) var(--s-5); } }
 @media (max-width: 479px) { .medals { gap: var(--s-5) var(--s-4); } }
 
-/* ---- banner image ------------------------------------------ */
-.banner {
-  margin: 0;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--rule);
-  box-shadow: var(--shadow-card);
-  position: relative;
-}
-.banner img { width: 100%; }
-@media (max-width: 639px) {
-  .banner figcaption { position: static; padding: var(--s-3) 0 0; background: none; }
-  .cta__title { max-width: none; }
-}
-.banner figcaption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: var(--s-6) var(--s-5) var(--s-4);
-  background: linear-gradient(transparent, var(--scrim));
-  color: rgba(255, 255, 255, 0.82);
-}
-
 /* ---- contact rail ------------------------------------------ */
 .contact {
   display: grid;

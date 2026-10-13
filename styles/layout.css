@@ -191,6 +191,51 @@
   margin: 0 auto var(--s-7);
 }
 
+/* ---- self-introduction ------------------------------------
+   A ~400-character bio does not survive being centred: every
+   line starts somewhere different and the eye loses its place.
+   So the block sits centred as a column, but its text is set
+   flush left at a reading measure, and the three results are
+   pulled out of the run-on sentence into a numbered list.
+   ----------------------------------------------------------- */
+.hero__bio {
+  max-width: 64ch;
+  margin: 0 auto var(--s-7);
+  text-align: left;
+  color: var(--ink-soft);
+  font-size: var(--t-body);
+  line-height: 1.8;
+}
+.hero__bio p + p { margin-top: var(--s-4); }
+.hero__role + .hero__bio { margin-top: var(--s-7); }
+.hero__bio-list {
+  list-style: none;
+  counter-reset: bio;
+  margin: var(--s-4) 0 0;
+  padding: 0;
+}
+.hero__bio-list li {
+  counter-increment: bio;
+  position: relative;
+  padding: var(--s-4) 0 var(--s-4) 3rem;
+  border-top: 1px solid var(--rule);
+}
+.hero__bio-list li:last-child { border-bottom: 1px solid var(--rule); }
+.hero__bio-list li::before {
+  content: counter(bio, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: calc(var(--s-4) + 0.3em);
+  font-family: var(--mono);
+  font-size: var(--t-label);
+  letter-spacing: var(--track-label);
+  color: var(--accent-text);
+}
+:root[data-lang="cn"] .hero__bio { line-height: 1.9; }
+
+/* sub-page header: the title and its lede need air between them */
+.hero > .section__title + .hero__lede { margin-top: var(--s-6); }
+
 .hero__actions {
   display: flex;
   flex-wrap: wrap;

@@ -32,7 +32,6 @@ tools/
 
 photo.jpg         原始证件照（仅用于社交分享预览图 og:image）
 portrait.png      首页用人像，由上面的脚本生成
-epee-coach.png    Épée Coach 项目截图
 JiayiMa_CV.pdf    简历 PDF
 ```
 
