@@ -1,5 +1,6 @@
 /* 06 · 石墨信号 Graphite Signal — neutral, industrial, Swiss */
 :root{
+ color-scheme: dark;
  --bg:#101010; --bg-lift:#161616; --surface:#1C1C1C; --surface-2:#242424; --plate:#F2F2F2;
  --ink:#F0F0F0; --ink-soft:#ABABAB; --muted:#818181; --ink-plate:#141414;
  --accent:#E8590C; --accent-text:#FF8A47; --accent-deep:#5C2405;

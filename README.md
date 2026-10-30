@@ -20,7 +20,7 @@ styles/
   components.css  按钮、条目、卡片、标签、奖牌、横幅
   adaptive.css    触摸/悬停、横屏、超宽屏、打印（最后加载，可覆盖上面）
   nojs.css        仅在 <noscript> 内加载，禁用 JS 时的导航回退
-  themes/         备选配色，每个文件只覆盖 tokens.css 里的颜色变量
+  themes/         备选配色（均为深色），每个文件只覆盖 tokens.css 里的颜色变量并声明 color-scheme: dark
 
 js/
   lang.js         中英切换（记住选择；支持 ?lang=cn / ?lang=en 链接）

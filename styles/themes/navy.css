@@ -1,5 +1,6 @@
 /* 05 · 学院藏青 Court Navy — collegiate, warm, approachable */
 :root{
+ color-scheme: dark;
  --bg:#0A0F1C; --bg-lift:#0E1526; --surface:#131B2E; --surface-2:#1A2338; --plate:#F1F3F8;
  --ink:#EBEEF5; --ink-soft:#A3AEC4; --muted:#7A869D; --ink-plate:#0D1424;
  --accent:#D9A02B; --accent-text:#EFBF55; --accent-deep:#5A3F0A;

@@ -1,6 +1,7 @@
 /* 佩剑酒红 Sabre Wine — the original dark editorial scheme.
    Link this after adaptive.css to restore it. */
 :root{
+ color-scheme: dark;
  --bg:#0B0C0E; --bg-lift:#101215; --surface:#15181C; --surface-2:#1C2026;
  --ink:#ECEDEE; --ink-soft:#A8ACB2; --muted:#7C838C;
  --accent:#C2354A; --accent-text:#E8677C; --accent-deep:#5E1224;

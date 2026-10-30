@@ -180,6 +180,9 @@
   color: var(--ink-soft);
   max-width: 42ch;
   margin: 0 auto var(--s-5);
+  /* Chinese titles wrap only at the spaces around a separator, never
+     inside a title (otherwise a phone splits 体育 / 教育训练学硕士). */
+  word-break: keep-all;
 }
 .hero__role .sep { color: var(--accent); padding: 0 4px; }
 
